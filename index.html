@@ -58,14 +58,13 @@ layout:
 
 <main id="top">
 
+<div class="hscroll" id="hscroll">
+<div class="hscroll__sticky">
+<div class="hscroll__track" id="hscrollTrack">
+
 <!-- 2. HERO : 반원 패턴 -->
 <section class="hero">
-  <ul class="hero__pattern" aria-hidden="true">
-    <li></li><li></li><li></li><li></li><li></li><li></li>
-    <li></li><li class="is-accent"></li><li></li><li></li><li></li><li></li>
-    <li></li><li></li><li></li><li></li><li></li><li></li>
-    <li></li><li></li><li></li><li></li><li></li><li></li>
-  </ul>
+  <ul class="hero__pattern" id="heroPattern" aria-hidden="true"></ul>
   <ul class="hero__labels">
     <li>Forge</li>
     <li>Direct</li>
@@ -82,7 +81,7 @@ layout:
 
 <!-- 3. DIRECT -->
 <section class="direct" id="direct">
-  <div class="direct__text" data-reveal>
+  <div class="direct__text">
     <h2 class="direct__title">Direct</h2>
     <p class="direct__lead">설계부터 양산까지 직영 공장으로 직접 연결<br>초정밀 가공 전문 제조사</p>
     <p class="direct__body">자사 냉간단조·CNC·열처리 공정을 한 라인으로 일원화해 외주 없이 납기를 단축했습니다.<br>ISO 9001 · IATF 16949 인증, 전 공정 전수검사로 공차 ±0.005mm를 보증합니다.</p>
@@ -100,31 +99,35 @@ layout:
 <!-- 4. CUSTOM -->
 <section class="custom" id="custom">
   <div class="container container--wide">
-    <header class="custom__head" data-reveal>
+    <header class="custom__head">
       <h2 class="custom__title">Custom</h2>
       <p class="custom__lead">고객 사양에 맞춰 설계하는 <strong>맞춤 정밀 부품</strong></p>
       <p class="custom__body">소량 시제품부터 대량 양산까지 동일한 품질 기준으로 대응합니다.<br>소재 선정, 금형 설계, 표면 처리까지 원스톱으로 제공합니다.</p>
     </header>
     <ul class="custom__list">
-      <li class="arch arch--top" data-reveal>
+      <li class="arch arch--top">
         <div class="arch__img"><img src="assets/images/arch-ring.jpg" alt="나사산이 가공된 정밀 링 부품 클로즈업" loading="lazy"></div>
         <p class="arch__cap">Thread Ring</p>
       </li>
-      <li class="arch arch--right" data-reveal>
+      <li class="arch arch--right">
         <div class="arch__img"><img src="assets/images/arch-factory-sun.jpg" alt="햇빛이 들어오는 단조 공장 내부" loading="lazy"></div>
         <p class="arch__cap">Forge Hall</p>
       </li>
-      <li class="arch arch--bottom" data-reveal>
+      <li class="arch arch--bottom">
         <div class="arch__img"><img src="assets/images/arch-factory-beam.jpg" alt="빛줄기가 스며드는 조립 라인" loading="lazy"></div>
         <p class="arch__cap">Assembly Line</p>
       </li>
-      <li class="arch arch--left" data-reveal>
+      <li class="arch arch--left">
         <div class="arch__img"><img src="assets/images/arch-machine.jpg" alt="금속 주조 가공 부품과 설비" loading="lazy"></div>
         <p class="arch__cap">Cast Parts</p>
       </li>
     </ul>
   </div>
 </section>
+
+</div>
+</div>
+</div>
 
 <!-- 5. STATEMENT -->
 <section class="statement">
