@@ -161,6 +161,28 @@
     window.addEventListener('resize', scheduleStage);
   }
 
+  // ---------- impact: sticky, blur clears and list lines fill one by one while scrolling ----------
+  const impact = document.getElementById('impact');
+  if (impact) {
+    const bg = document.getElementById('impactBg');
+    const items = [...impact.querySelectorAll('.impact__list li')];
+    let iraf = null;
+    const renderImpact = () => {
+      iraf = null;
+      const range = impact.offsetHeight - window.innerHeight;
+      const p = reduced ? 1 : clamp(-impact.getBoundingClientRect().top / range);
+      bg.style.filter = `blur(${50 * (1 - easeInOut(clamp(p / 0.45)))}px)`;
+      items.forEach((li, i) => {
+        const a0 = 0.2 + i * 0.2;
+        li.style.setProperty('--f', clamp((p - a0) / 0.2).toFixed(3));
+      });
+    };
+    const scheduleImpact = () => { if (!iraf) iraf = requestAnimationFrame(renderImpact); };
+    renderImpact();
+    window.addEventListener('scroll', scheduleImpact, { passive: true });
+    window.addEventListener('resize', scheduleImpact);
+  }
+
   // map arrows are SMIL: pause them for reduced-motion
   if (reduced) document.querySelectorAll('.map__links').forEach((svg) => svg.pauseAnimations && svg.pauseAnimations());
 
