@@ -130,6 +130,37 @@
     document.addEventListener('pointerleave', () => { pointer = null; schedule(); });
   }
 
+  // ---------- statement: scroll-driven text swap + images shooting up one by one ----------
+  const stage = document.getElementById('statement');
+  if (stage) {
+    const texts = [...stage.querySelectorAll('.statement__text')];
+    const imgs = [...stage.querySelectorAll('.statement__img')];
+    const N = imgs.length;
+    let sraf = null;
+    const renderStage = () => {
+      sraf = null;
+      const range = stage.offsetHeight - window.innerHeight;
+      const p = reduced ? 1 : clamp(-stage.getBoundingClientRect().top / range);
+      const vh = window.innerHeight;
+      const step = Math.min(N - 1, Math.floor(p * N * 0.999));
+      texts.forEach((el, i) => {
+        el.classList.toggle('is-active', i === step);
+        el.classList.toggle('is-past', i < step);
+      });
+      imgs.forEach((el, i) => {
+        // image i launches at i/N of the scroll and rises fast (ease-out), then drifts up slowly
+        const start = i / (N + 0.5), len = 0.5 / (N + 0.5) + 0.04;
+        const rise = easeOut(clamp((p - start) / len));
+        const drift = clamp(p - start - len, 0, 1) * vh * 0.18;
+        el.style.transform = `translate3d(0,${(1 - rise) * vh * 1.2 - drift}px,0)`;
+      });
+    };
+    const scheduleStage = () => { if (!sraf) sraf = requestAnimationFrame(renderStage); };
+    renderStage();
+    window.addEventListener('scroll', scheduleStage, { passive: true });
+    window.addEventListener('resize', scheduleStage);
+  }
+
   // ---------- custom cursor: blue dot + fading blue trail ----------
   if (canHover) {
     document.documentElement.classList.add('has-cursor');

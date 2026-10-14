@@ -124,11 +124,20 @@ layout:
 </div>
 </div>
 
-<!-- 5. STATEMENT -->
-<section class="statement">
-  <p class="statement__text" data-reveal>설계에서 양산까지,<br>하나의 라인으로.</p>
-  <figure class="statement__img statement__img--a"><img src="assets/images/pipes-tall.jpg" alt="스테인리스 배관 설비" loading="lazy"></figure>
-  <figure class="statement__img statement__img--b"><img src="assets/images/pipes-wide.jpg" alt="공정 라인의 배관과 밸브" loading="lazy"></figure>
+<!-- 5. STATEMENT : scroll-driven text swap + images rising one by one -->
+<section class="statement" id="statement">
+  <div class="statement__sticky">
+    <div class="statement__texts" aria-live="polite">
+      <p class="statement__text is-active">설계에서 양산까지,<br>하나의 라인으로.</p>
+      <p class="statement__text">냉간단조부터<br>정밀가공까지.</p>
+      <p class="statement__text">열처리와<br>전수검사까지.</p>
+      <p class="statement__text">한국·베트남·미국,<br>글로벌 공급망으로.</p>
+    </div>
+    <figure class="statement__img statement__img--1"><img src="assets/images/pipes-wide.jpg" alt="공정 라인의 배관과 밸브" loading="lazy"></figure>
+    <figure class="statement__img statement__img--2"><img src="assets/images/pipes-tall.jpg" alt="스테인리스 배관 설비" loading="lazy"></figure>
+    <figure class="statement__img statement__img--3"><img src="assets/images/arch-factory-sun.jpg" alt="햇빛이 들어오는 단조 공장 내부" loading="lazy"></figure>
+    <figure class="statement__img statement__img--4"><img src="assets/images/news-roll.jpg" alt="냉간단조 프레스 롤러 설비" loading="lazy"></figure>
+  </div>
 </section>
 
 <!-- 6. NETWORK -->
