@@ -139,7 +139,7 @@
     cv.className = 'cursor-trail';
     document.body.append(cv, dot);
     const ctx = cv.getContext('2d');
-    const LIFE = 650;                 // trail lifetime (ms)
+    const LIFE = 450;                 // how long a trail point stays (ms)
     const COLOR = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#54b3ff';
     let pts = [];
     let cur = null;
@@ -156,17 +156,15 @@
       trailRaf = null;
       ctx.clearRect(0, 0, cv.width, cv.height);
       pts = pts.filter((p) => now - p.t < LIFE);
-      ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = COLOR;
-      for (let i = 1; i < pts.length; i++) {
-        const k = 1 - (now - pts[i].t) / LIFE;       // 1 → 0 as it ages
-        ctx.globalAlpha = k * 0.9;
-        ctx.lineWidth = 2 + 10 * k;
+      if (pts.length > 1) {
+        // one continuous opaque path (no per-segment overlap → no dots); the tail simply retracts
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        ctx.strokeStyle = COLOR; ctx.lineWidth = 3; ctx.globalAlpha = 1;
         ctx.beginPath();
-        ctx.moveTo(pts[i - 1].x, pts[i - 1].y);
-        ctx.lineTo(pts[i].x, pts[i].y);
+        ctx.moveTo(pts[0].x, pts[0].y);
+        for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
         ctx.stroke();
       }
-      ctx.globalAlpha = 1;
       if (pts.length > 1) trailRaf = requestAnimationFrame(draw);
     };
 
@@ -181,9 +179,6 @@
       }
     }, { passive: true });
     document.addEventListener('pointerleave', () => dot.classList.remove('is-on'));
-    document.addEventListener('pointerover', (e) => {
-      dot.classList.toggle('is-link', !!e.target.closest('a, .arch'));
-    });
   }
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

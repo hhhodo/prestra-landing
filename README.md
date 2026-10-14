@@ -27,4 +27,4 @@ typo=loud / image=high / color=dominant / image-radius=soft / card-radius=soft /
 - 히어로 마우스 오버: 커서가 올라간 칸의 반원만 원으로 변함 (색 변화 없음, hover 지원 기기만).
 - 스티키: 가로 핀 구간은 화면마다 멈춤 구간을 두고(히어로 → 홀드 → Direct 홀드 → Custom 홀드), Statement·Impact는 100vh 스티키로 고정되어 다음 섹션이 위로 덮으며 올라옴(≥1025px).
 - Custom 아치 호버: 반원 → 원으로 변하면서 이미지 확대.
-- 커스텀 커서: 파란 원(#54b3ff) + 이동 궤적 라인(0.65초 페이드). 링크/아치 위에서는 원이 커짐. hover 지원 기기에서만 동작, reduced-motion이면 궤적 생략.
+- 커스텀 커서: 파란 원(#54b3ff) + 이동 궤적 라인(3px, 불투명 100%, 꼬리가 0.45초에 걸쳐 짧아지며 사라짐). hover 지원 기기에서만 동작, reduced-motion이면 궤적 생략.
