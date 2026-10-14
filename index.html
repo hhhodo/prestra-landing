@@ -42,7 +42,7 @@ layout:
 <header class="nav" id="nav">
   <div class="nav__bar">
     <a class="nav__logo" href="#top" aria-label="PRESTRA">PRESTRA</a>
-    <nav class="nav__links" aria-label="주요 메뉴">
+    <nav class="nav__links" id="navLinks" aria-label="주요 메뉴">
       <a href="#direct">Company</a>
       <a href="#custom">Business</a>
       <a href="#network">Network</a>
@@ -53,6 +53,7 @@ layout:
       <span>KO</span>
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="10" cy="10" r="8.4"/><ellipse cx="10" cy="10" rx="3.6" ry="8.4"/><path d="M1.6 10h16.8"/></svg>
     </div>
+    <button class="nav__toggle" id="navToggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navLinks"><i></i><i></i></button>
   </div>
 </header>
 

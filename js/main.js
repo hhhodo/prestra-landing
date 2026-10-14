@@ -302,6 +302,21 @@
     document.addEventListener('pointerleave', () => dot.classList.remove('is-on'));
   }
 
+  // mobile menu
+  const navEl = document.getElementById('nav');
+  const navToggle = document.getElementById('navToggle');
+  if (navEl && navToggle) {
+    const setNav = (open) => {
+      navEl.classList.toggle('is-open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    };
+    navToggle.addEventListener('click', () => setNav(!navEl.classList.contains('is-open')));
+    navEl.querySelectorAll('.nav__links a').forEach((a) => a.addEventListener('click', () => setNav(false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setNav(false); });
+    document.addEventListener('click', (e) => { if (!navEl.contains(e.target)) setNav(false); });
+  }
+
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const targets = document.querySelectorAll('[data-reveal]');
   if (reduceMotion || !('IntersectionObserver' in window)) {

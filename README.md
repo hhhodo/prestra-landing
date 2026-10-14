@@ -35,3 +35,4 @@ typo=loud / image=high / color=dominant / image-radius=soft / card-radius=soft /
 - Impact 재구성: 3개 화면(협력사 상생/지역사회/지속가능성). 각 화면마다 블러가 풀리고 해당 라인이 채워지면 다음 화면으로 전환. 배경은 고해상도 원본(2400px)만 사용.
 - Impact 자동 재생: 스티키로 고정되면 화면당 약 4.2초 동안 블러가 풀리고 라인이 자동으로 채워진 뒤 다음 화면으로 자동 전환. 스크롤로도 즉시 다음/이전 화면으로 이동(스크롤 구간 3등분). reduced-motion이면 마지막 화면 정지.
 - Impact 배경은 사용자가 제공한 3장(impact-partner/community/sustain.jpg, 2400px).
+- 모바일/태블릿(≤1024): 햄버거 메뉴, 가로 핀 스크롤 해제 후 세로 스택(Direct → Custom 2열), 맵 전체 폭 표시, 푸터 1열. 가로 오버플로 없음(390/768/1024 확인). 스티키 스테이지(Statement·Impact)는 모바일에서도 동작.
