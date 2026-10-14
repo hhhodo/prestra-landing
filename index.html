@@ -1477,24 +1477,22 @@ layout:
 
 <!-- 9. FOOTER -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer__inner">
-      <p class="footer__logo">PRESTRA</p>
-      <div class="footer__cols">
-        <ul>
-          <li class="footer__label">운영시간</li>
-          <li>평일 09:00 - 18:00 (점심시간 12:00 - 13:00)</li>
-        </ul>
-        <ul>
-          <li class="footer__label">고객센터</li>
-          <li>031-000-0000</li>
-          <li>sales@prestra.example</li>
-        </ul>
-        <ul>
-          <li>© 2026 PRESTRA Inc.</li>
-          <li>All rights reserved.</li>
-        </ul>
-      </div>
+  <div class="container container--wide">
+    <div class="grid footer__grid">
+      <p class="footer__logo" style="grid-column:1/5">PRESTRA</p>
+      <ul style="grid-column:5/9">
+        <li class="footer__label">운영시간</li>
+        <li>평일 09:00 - 18:00 (점심시간 12:00 - 13:00)</li>
+      </ul>
+      <ul style="grid-column:9/11">
+        <li class="footer__label">고객센터</li>
+        <li>031-000-0000</li>
+        <li>sales@prestra.example</li>
+      </ul>
+      <ul class="footer__legal" style="grid-column:11/13">
+        <li>© 2026 PRESTRA Inc.</li>
+        <li>All rights reserved.</li>
+      </ul>
     </div>
   </div>
 </footer>
