@@ -1,0 +1,1488 @@
+<!--
+variant:
+typo=loud
+image=high
+color=dominant
+
+image-radius=soft
+card-radius=soft
+button-radius=round
+
+border=hairline
+button-style=solid+outline
+fw=600/400
+spacing=space-11
+-->
+<!--
+layout:
+1. Header       — full-bleed (floating pill nav)
+2. Hero        — full-bleed — 반원 패턴 6×4 + 라벨 4-4-4 (우측 2/3 오프셋)
+3. Direct      — full-bleed — 5-7 (텍스트 좌 / 이미지 우 블리드)
+4. Custom      — wide — 3-3-3-3 (반원 아치 카드, 센터 헤더)
+5. Statement   — full-bleed (중앙 카피 + 대각 오프셋 이미지 2장)
+6. Network     — full-bleed — 4-8 헤더 + 반원 도트 월드맵(인라인 SVG)
+7. Impact      — full-bleed — 7-5 (블러 배경 / 좌 카피 · 우 버튼)
+8. Newsroom    — wide — 8-4 (메인 1 + 사이드 2)
+9. Footer      — default — 4-8
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRESTRA — 정밀 제조의 기준, 설계에서 양산까지</title>
+<meta name="description" content="PRESTRA는 냉간단조·CNC 정밀가공·열처리를 일원화한 글로벌 제조 파트너입니다.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<!-- 1. HEADER -->
+<header class="nav" id="nav">
+  <div class="nav__bar">
+    <a class="nav__logo" href="#top" aria-label="PRESTRA">PRESTRA</a>
+    <nav class="nav__links" aria-label="주요 메뉴">
+      <a href="#direct">Company</a>
+      <a href="#custom">Business</a>
+      <a href="#network">Network</a>
+      <a href="#impact">Impact</a>
+      <a href="#newsroom">Newsroom</a>
+    </nav>
+    <div class="nav__lang" aria-label="언어">
+      <span>KO</span>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="10" cy="10" r="8.4"/><ellipse cx="10" cy="10" rx="3.6" ry="8.4"/><path d="M1.6 10h16.8"/></svg>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 2. HERO : 반원 패턴 -->
+<section class="hero">
+  <ul class="hero__pattern" aria-hidden="true">
+    <li></li><li></li><li></li><li></li><li></li><li></li>
+    <li></li><li class="is-accent"></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li><li></li>
+  </ul>
+  <ul class="hero__labels">
+    <li>Forge</li>
+    <li>Direct</li>
+    <li>Custom</li>
+  </ul>
+  <div class="hero__marquee" aria-hidden="true">
+    <div class="hero__marquee-track">
+      <span>PRESTRA PRECISION MANUFACTURING&nbsp;</span>
+      <span>PRESTRA PRECISION MANUFACTURING&nbsp;</span>
+    </div>
+  </div>
+  <h1 class="sr-only">PRESTRA — 정밀 제조의 기준, 설계에서 양산까지</h1>
+</section>
+
+<!-- 3. DIRECT -->
+<section class="direct" id="direct">
+  <div class="direct__text" data-reveal>
+    <h2 class="direct__title">Direct</h2>
+    <p class="direct__lead">설계부터 양산까지 직영 공장으로 직접 연결<br>초정밀 가공 전문 제조사</p>
+    <p class="direct__body">자사 냉간단조·CNC·열처리 공정을 한 라인으로 일원화해 외주 없이 납기를 단축했습니다.<br>ISO 9001 · IATF 16949 인증, 전 공정 전수검사로 공차 ±0.005mm를 보증합니다.</p>
+    <p class="direct__note">※ 사양은 품목과 소재에 따라 달라질 수 있습니다.</p>
+    <a class="btn btn--outline-dark" href="#custom">
+      <span>Catalog</span>
+      <img src="assets/images/09a40.svg" alt="" width="16" height="16">
+    </a>
+  </div>
+  <div class="direct__media">
+    <img src="assets/images/hero-nuts.jpg" alt="정밀 가공된 고강도 너트가 열을 지어 놓인 모습" loading="lazy">
+  </div>
+</section>
+
+<!-- 4. CUSTOM -->
+<section class="custom" id="custom">
+  <div class="container container--wide">
+    <header class="custom__head" data-reveal>
+      <h2 class="custom__title">Custom</h2>
+      <p class="custom__lead">고객 사양에 맞춰 설계하는 <strong>맞춤 정밀 부품</strong></p>
+      <p class="custom__body">소량 시제품부터 대량 양산까지 동일한 품질 기준으로 대응합니다.<br>소재 선정, 금형 설계, 표면 처리까지 원스톱으로 제공합니다.</p>
+    </header>
+    <ul class="custom__list">
+      <li class="arch arch--top" data-reveal>
+        <div class="arch__img"><img src="assets/images/arch-ring.jpg" alt="나사산이 가공된 정밀 링 부품 클로즈업" loading="lazy"></div>
+        <p class="arch__cap">Thread Ring</p>
+      </li>
+      <li class="arch arch--right" data-reveal>
+        <div class="arch__img"><img src="assets/images/arch-factory-sun.jpg" alt="햇빛이 들어오는 단조 공장 내부" loading="lazy"></div>
+        <p class="arch__cap">Forge Hall</p>
+      </li>
+      <li class="arch arch--bottom" data-reveal>
+        <div class="arch__img"><img src="assets/images/arch-factory-beam.jpg" alt="빛줄기가 스며드는 조립 라인" loading="lazy"></div>
+        <p class="arch__cap">Assembly Line</p>
+      </li>
+      <li class="arch arch--left" data-reveal>
+        <div class="arch__img"><img src="assets/images/arch-machine.jpg" alt="금속 주조 가공 부품과 설비" loading="lazy"></div>
+        <p class="arch__cap">Cast Parts</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 5. STATEMENT -->
+<section class="statement">
+  <p class="statement__text" data-reveal>설계에서 양산까지,<br>하나의 라인으로.</p>
+  <figure class="statement__img statement__img--a"><img src="assets/images/pipes-tall.jpg" alt="스테인리스 배관 설비" loading="lazy"></figure>
+  <figure class="statement__img statement__img--b"><img src="assets/images/pipes-wide.jpg" alt="공정 라인의 배관과 밸브" loading="lazy"></figure>
+</section>
+
+<!-- 6. NETWORK -->
+<section class="network" id="network">
+  <div class="container container--wide">
+    <div class="grid">
+      <div class="network__head" style="grid-column:1/10" data-reveal>
+        <p class="network__eyebrow"><i></i>GLOBAL NETWORK</p>
+        <h2 class="network__title">글로벌 생산 네트워크로 완성하는<br>안정적인 공급 경쟁력</h2>
+        <p class="network__body">한국·베트남·미국을 연결하는 글로벌 생산 네트워크와 수직계열화된 제조 역량을 기반으로,<br>전 세계 고객에게 우수한 품질과 납기, 가격 경쟁력을 갖춘 안정적인 공급 솔루션을 제공합니다.</p>
+        <a class="btn btn--outline-light" href="#impact">자세히 보기</a>
+      </div>
+    </div>
+  </div>
+  <svg class="map" viewBox="0 0 1920 954" role="img" aria-label="한국·베트남·미국을 잇는 글로벌 생산 네트워크 월드맵">
+<defs>
+<path id="d-r" d="M0 0H6.76A6.76 6.76 0 0 1 6.76 13.52H0Z"/>
+<path id="d-b" d="M0 0H13.52V6.76A6.76 6.76 0 0 1 0 6.76Z"/>
+<path id="d-t" d="M0 13.52V6.76A6.76 6.76 0 0 1 13.52 6.76V13.52Z"/>
+</defs>
+<use href="#d-r" x="668.91" y="0"/>
+<use href="#d-b" x="689.18" y="0"/>
+<use href="#d-t" x="709.45" y="0"/>
+<use href="#d-r" x="729.72" y="0"/>
+<use href="#d-r" x="425.67" y="20.27"/>
+<use href="#d-b" x="445.94" y="20.27"/>
+<use href="#d-t" x="466.21" y="20.27"/>
+<use href="#d-r" x="486.48" y="20.27"/>
+<use href="#d-b" x="506.75" y="20.27"/>
+<use href="#d-b" x="567.56" y="20.27"/>
+<use href="#d-t" x="587.83" y="20.27"/>
+<use href="#d-r" x="608.1" y="20.27"/>
+<use href="#d-b" x="628.37" y="20.27"/>
+<use href="#d-t" x="648.64" y="20.27"/>
+<use href="#d-r" x="668.91" y="20.27"/>
+<use href="#d-b" x="689.18" y="20.27"/>
+<use href="#d-r" x="790.53" y="20.27"/>
+<use href="#d-b" x="810.8" y="20.27"/>
+<use href="#d-b" x="385.13" y="40.54"/>
+<use href="#d-t" x="405.4" y="40.54"/>
+<use href="#d-t" x="466.21" y="40.54"/>
+<use href="#d-r" x="547.29" y="40.54"/>
+<use href="#d-b" x="567.56" y="40.54"/>
+<use href="#d-t" x="587.83" y="40.54"/>
+<use href="#d-r" x="608.1" y="40.54"/>
+<use href="#d-b" x="628.37" y="40.54"/>
+<use href="#d-t" x="648.64" y="40.54"/>
+<use href="#d-r" x="668.91" y="40.54"/>
+<use href="#d-b" x="689.18" y="40.54"/>
+<use href="#d-t" x="709.45" y="40.54"/>
+<use href="#d-r" x="729.72" y="40.54"/>
+<use href="#d-b" x="749.99" y="40.54"/>
+<use href="#d-t" x="770.26" y="40.54"/>
+<use href="#d-r" x="1033.77" y="40.54"/>
+<use href="#d-t" x="1195.93" y="40.54"/>
+<use href="#d-r" x="1216.2" y="40.54"/>
+<use href="#d-b" x="1418.9" y="40.54"/>
+<use href="#d-b" x="445.94" y="60.81"/>
+<use href="#d-t" x="466.21" y="60.81"/>
+<use href="#d-r" x="547.29" y="60.81"/>
+<use href="#d-b" x="567.56" y="60.81"/>
+<use href="#d-t" x="587.83" y="60.81"/>
+<use href="#d-r" x="608.1" y="60.81"/>
+<use href="#d-b" x="628.37" y="60.81"/>
+<use href="#d-t" x="648.64" y="60.81"/>
+<use href="#d-r" x="668.91" y="60.81"/>
+<use href="#d-b" x="689.18" y="60.81"/>
+<use href="#d-t" x="709.45" y="60.81"/>
+<use href="#d-r" x="729.72" y="60.81"/>
+<use href="#d-b" x="749.99" y="60.81"/>
+<use href="#d-t" x="770.26" y="60.81"/>
+<use href="#d-r" x="972.96" y="60.81"/>
+<use href="#d-b" x="993.23" y="60.81"/>
+<use href="#d-b" x="263.51" y="81.08"/>
+<use href="#d-t" x="344.59" y="81.08"/>
+<use href="#d-t" x="587.83" y="81.08"/>
+<use href="#d-r" x="608.1" y="81.08"/>
+<use href="#d-b" x="628.37" y="81.08"/>
+<use href="#d-t" x="648.64" y="81.08"/>
+<use href="#d-r" x="668.91" y="81.08"/>
+<use href="#d-b" x="689.18" y="81.08"/>
+<use href="#d-t" x="709.45" y="81.08"/>
+<use href="#d-r" x="729.72" y="81.08"/>
+<use href="#d-b" x="749.99" y="81.08"/>
+<use href="#d-t" x="770.26" y="81.08"/>
+<use href="#d-b" x="1236.47" y="81.08"/>
+<use href="#d-r" x="1459.44" y="81.08"/>
+<use href="#d-b" x="1479.71" y="81.08"/>
+<use href="#d-t" x="1499.98" y="81.08"/>
+<use href="#d-b" x="324.32" y="101.35"/>
+<use href="#d-b" x="445.94" y="101.35"/>
+<use href="#d-r" x="608.1" y="101.35"/>
+<use href="#d-b" x="628.37" y="101.35"/>
+<use href="#d-t" x="648.64" y="101.35"/>
+<use href="#d-r" x="668.91" y="101.35"/>
+<use href="#d-b" x="689.18" y="101.35"/>
+<use href="#d-t" x="709.45" y="101.35"/>
+<use href="#d-r" x="729.72" y="101.35"/>
+<use href="#d-b" x="749.99" y="101.35"/>
+<use href="#d-t" x="770.26" y="101.35"/>
+<use href="#d-r" x="1216.2" y="101.35"/>
+<use href="#d-t" x="1378.36" y="101.35"/>
+<use href="#d-r" x="1398.63" y="101.35"/>
+<use href="#d-b" x="1418.9" y="101.35"/>
+<use href="#d-t" x="1439.17" y="101.35"/>
+<use href="#d-r" x="1459.44" y="101.35"/>
+<use href="#d-t" x="222.97" y="121.62"/>
+<use href="#d-r" x="243.24" y="121.62"/>
+<use href="#d-b" x="263.51" y="121.62"/>
+<use href="#d-r" x="608.1" y="121.62"/>
+<use href="#d-b" x="628.37" y="121.62"/>
+<use href="#d-t" x="648.64" y="121.62"/>
+<use href="#d-r" x="668.91" y="121.62"/>
+<use href="#d-b" x="689.18" y="121.62"/>
+<use href="#d-t" x="709.45" y="121.62"/>
+<use href="#d-r" x="729.72" y="121.62"/>
+<use href="#d-b" x="749.99" y="121.62"/>
+<use href="#d-b" x="1175.66" y="121.62"/>
+<use href="#d-b" x="1358.09" y="121.62"/>
+<use href="#d-t" x="1378.36" y="121.62"/>
+<use href="#d-r" x="1398.63" y="121.62"/>
+<use href="#d-b" x="1418.9" y="121.62"/>
+<use href="#d-t" x="1439.17" y="121.62"/>
+<use href="#d-r" x="1459.44" y="121.62"/>
+<use href="#d-t" x="1499.98" y="121.62"/>
+<use href="#d-r" x="1520.25" y="121.62"/>
+<use href="#d-r" x="1581.06" y="121.62"/>
+<use href="#d-t" x="40.54" y="141.89"/>
+<use href="#d-r" x="60.81" y="141.89"/>
+<use href="#d-t" x="283.78" y="141.89"/>
+<use href="#d-r" x="304.05" y="141.89"/>
+<use href="#d-b" x="445.94" y="141.89"/>
+<use href="#d-t" x="466.21" y="141.89"/>
+<use href="#d-r" x="486.48" y="141.89"/>
+<use href="#d-b" x="506.75" y="141.89"/>
+<use href="#d-b" x="628.37" y="141.89"/>
+<use href="#d-t" x="648.64" y="141.89"/>
+<use href="#d-r" x="668.91" y="141.89"/>
+<use href="#d-b" x="689.18" y="141.89"/>
+<use href="#d-t" x="709.45" y="141.89"/>
+<use href="#d-r" x="729.72" y="141.89"/>
+<use href="#d-r" x="1033.77" y="141.89"/>
+<use href="#d-r" x="1277.01" y="141.89"/>
+<use href="#d-t" x="1317.55" y="141.89"/>
+<use href="#d-r" x="1337.82" y="141.89"/>
+<use href="#d-b" x="1358.09" y="141.89"/>
+<use href="#d-t" x="1378.36" y="141.89"/>
+<use href="#d-r" x="1398.63" y="141.89"/>
+<use href="#d-b" x="1418.9" y="141.89"/>
+<use href="#d-t" x="1439.17" y="141.89"/>
+<use href="#d-r" x="1459.44" y="141.89"/>
+<use href="#d-b" x="1479.71" y="141.89"/>
+<use href="#d-t" x="1499.98" y="141.89"/>
+<use href="#d-r" x="1520.25" y="141.89"/>
+<use href="#d-b" x="1540.52" y="141.89"/>
+<use href="#d-t" x="1560.79" y="141.89"/>
+<use href="#d-r" x="1581.06" y="141.89"/>
+<use href="#d-t" x="1621.6" y="141.89"/>
+<use href="#d-r" x="1641.87" y="141.89"/>
+<use href="#d-b" x="1662.14" y="141.89"/>
+<use href="#d-t" x="1682.41" y="141.89"/>
+<use href="#d-r" x="1702.68" y="141.89"/>
+<use href="#d-b" x="20.27" y="162.16"/>
+<use href="#d-t" x="40.54" y="162.16"/>
+<use href="#d-r" x="60.81" y="162.16"/>
+<use href="#d-b" x="81.08" y="162.16"/>
+<use href="#d-t" x="101.35" y="162.16"/>
+<use href="#d-r" x="121.62" y="162.16"/>
+<use href="#d-b" x="141.89" y="162.16"/>
+<use href="#d-t" x="162.16" y="162.16"/>
+<use href="#d-r" x="182.43" y="162.16"/>
+<use href="#d-b" x="202.7" y="162.16"/>
+<use href="#d-t" x="222.97" y="162.16"/>
+<use href="#d-r" x="243.24" y="162.16"/>
+<use href="#d-t" x="405.4" y="162.16"/>
+<use href="#d-b" x="445.94" y="162.16"/>
+<use href="#d-t" x="466.21" y="162.16"/>
+<use href="#d-b" x="506.75" y="162.16"/>
+<use href="#d-b" x="628.37" y="162.16"/>
+<use href="#d-t" x="648.64" y="162.16"/>
+<use href="#d-r" x="668.91" y="162.16"/>
+<use href="#d-b" x="689.18" y="162.16"/>
+<use href="#d-t" x="709.45" y="162.16"/>
+<use href="#d-b" x="993.23" y="162.16"/>
+<use href="#d-t" x="1013.5" y="162.16"/>
+<use href="#d-r" x="1033.77" y="162.16"/>
+<use href="#d-b" x="1054.04" y="162.16"/>
+<use href="#d-t" x="1074.31" y="162.16"/>
+<use href="#d-t" x="1135.12" y="162.16"/>
+<use href="#d-b" x="1175.66" y="162.16"/>
+<use href="#d-b" x="1236.47" y="162.16"/>
+<use href="#d-r" x="1277.01" y="162.16"/>
+<use href="#d-t" x="1317.55" y="162.16"/>
+<use href="#d-r" x="1337.82" y="162.16"/>
+<use href="#d-b" x="1358.09" y="162.16"/>
+<use href="#d-t" x="1378.36" y="162.16"/>
+<use href="#d-r" x="1398.63" y="162.16"/>
+<use href="#d-b" x="1418.9" y="162.16"/>
+<use href="#d-t" x="1439.17" y="162.16"/>
+<use href="#d-r" x="1459.44" y="162.16"/>
+<use href="#d-b" x="1479.71" y="162.16"/>
+<use href="#d-t" x="1499.98" y="162.16"/>
+<use href="#d-r" x="1520.25" y="162.16"/>
+<use href="#d-b" x="1540.52" y="162.16"/>
+<use href="#d-t" x="1560.79" y="162.16"/>
+<use href="#d-r" x="1581.06" y="162.16"/>
+<use href="#d-b" x="1601.33" y="162.16"/>
+<use href="#d-t" x="1621.6" y="162.16"/>
+<use href="#d-r" x="1641.87" y="162.16"/>
+<use href="#d-b" x="1662.14" y="162.16"/>
+<use href="#d-t" x="1682.41" y="162.16"/>
+<use href="#d-r" x="1702.68" y="162.16"/>
+<use href="#d-b" x="1722.95" y="162.16"/>
+<use href="#d-t" x="1743.22" y="162.16"/>
+<use href="#d-r" x="1763.49" y="162.16"/>
+<use href="#d-b" x="1783.76" y="162.16"/>
+<use href="#d-t" x="1804.03" y="162.16"/>
+<use href="#d-b" x="1844.57" y="162.16"/>
+<use href="#d-t" x="1864.84" y="162.16"/>
+<use href="#d-b" x="20.27" y="182.43"/>
+<use href="#d-t" x="40.54" y="182.43"/>
+<use href="#d-r" x="60.81" y="182.43"/>
+<use href="#d-b" x="81.08" y="182.43"/>
+<use href="#d-t" x="101.35" y="182.43"/>
+<use href="#d-r" x="121.62" y="182.43"/>
+<use href="#d-b" x="141.89" y="182.43"/>
+<use href="#d-t" x="162.16" y="182.43"/>
+<use href="#d-r" x="182.43" y="182.43"/>
+<use href="#d-b" x="202.7" y="182.43"/>
+<use href="#d-t" x="222.97" y="182.43"/>
+<use href="#d-r" x="243.24" y="182.43"/>
+<use href="#d-b" x="263.51" y="182.43"/>
+<use href="#d-t" x="283.78" y="182.43"/>
+<use href="#d-r" x="304.05" y="182.43"/>
+<use href="#d-b" x="324.32" y="182.43"/>
+<use href="#d-t" x="344.59" y="182.43"/>
+<use href="#d-r" x="364.86" y="182.43"/>
+<use href="#d-b" x="385.13" y="182.43"/>
+<use href="#d-t" x="405.4" y="182.43"/>
+<use href="#d-r" x="425.67" y="182.43"/>
+<use href="#d-t" x="466.21" y="182.43"/>
+<use href="#d-b" x="506.75" y="182.43"/>
+<use href="#d-t" x="527.02" y="182.43"/>
+<use href="#d-b" x="628.37" y="182.43"/>
+<use href="#d-t" x="648.64" y="182.43"/>
+<use href="#d-r" x="668.91" y="182.43"/>
+<use href="#d-b" x="689.18" y="182.43"/>
+<use href="#d-r" x="972.96" y="182.43"/>
+<use href="#d-b" x="993.23" y="182.43"/>
+<use href="#d-r" x="1033.77" y="182.43"/>
+<use href="#d-b" x="1054.04" y="182.43"/>
+<use href="#d-r" x="1094.58" y="182.43"/>
+<use href="#d-t" x="1135.12" y="182.43"/>
+<use href="#d-r" x="1155.39" y="182.43"/>
+<use href="#d-b" x="1175.66" y="182.43"/>
+<use href="#d-t" x="1195.93" y="182.43"/>
+<use href="#d-r" x="1216.2" y="182.43"/>
+<use href="#d-b" x="1236.47" y="182.43"/>
+<use href="#d-t" x="1256.74" y="182.43"/>
+<use href="#d-b" x="1297.28" y="182.43"/>
+<use href="#d-t" x="1317.55" y="182.43"/>
+<use href="#d-r" x="1337.82" y="182.43"/>
+<use href="#d-b" x="1358.09" y="182.43"/>
+<use href="#d-t" x="1378.36" y="182.43"/>
+<use href="#d-r" x="1398.63" y="182.43"/>
+<use href="#d-b" x="1418.9" y="182.43"/>
+<use href="#d-t" x="1439.17" y="182.43"/>
+<use href="#d-r" x="1459.44" y="182.43"/>
+<use href="#d-b" x="1479.71" y="182.43"/>
+<use href="#d-t" x="1499.98" y="182.43"/>
+<use href="#d-r" x="1520.25" y="182.43"/>
+<use href="#d-b" x="1540.52" y="182.43"/>
+<use href="#d-t" x="1560.79" y="182.43"/>
+<use href="#d-r" x="1581.06" y="182.43"/>
+<use href="#d-b" x="1601.33" y="182.43"/>
+<use href="#d-t" x="1621.6" y="182.43"/>
+<use href="#d-r" x="1641.87" y="182.43"/>
+<use href="#d-b" x="1662.14" y="182.43"/>
+<use href="#d-t" x="1682.41" y="182.43"/>
+<use href="#d-r" x="1702.68" y="182.43"/>
+<use href="#d-b" x="1722.95" y="182.43"/>
+<use href="#d-t" x="1743.22" y="182.43"/>
+<use href="#d-r" x="1763.49" y="182.43"/>
+<use href="#d-b" x="1783.76" y="182.43"/>
+<use href="#d-t" x="1804.03" y="182.43"/>
+<use href="#d-r" x="1824.3" y="182.43"/>
+<use href="#d-b" x="1844.57" y="182.43"/>
+<use href="#d-t" x="1864.84" y="182.43"/>
+<use href="#d-r" x="1885.11" y="182.43"/>
+<use href="#d-b" x="1905.38" y="182.43"/>
+<use href="#d-t" x="40.54" y="202.7"/>
+<use href="#d-r" x="60.81" y="202.7"/>
+<use href="#d-b" x="81.08" y="202.7"/>
+<use href="#d-t" x="101.35" y="202.7"/>
+<use href="#d-r" x="121.62" y="202.7"/>
+<use href="#d-b" x="141.89" y="202.7"/>
+<use href="#d-t" x="162.16" y="202.7"/>
+<use href="#d-r" x="182.43" y="202.7"/>
+<use href="#d-b" x="202.7" y="202.7"/>
+<use href="#d-t" x="222.97" y="202.7"/>
+<use href="#d-r" x="243.24" y="202.7"/>
+<use href="#d-b" x="263.51" y="202.7"/>
+<use href="#d-t" x="283.78" y="202.7"/>
+<use href="#d-r" x="304.05" y="202.7"/>
+<use href="#d-b" x="324.32" y="202.7"/>
+<use href="#d-t" x="344.59" y="202.7"/>
+<use href="#d-r" x="364.86" y="202.7"/>
+<use href="#d-b" x="385.13" y="202.7"/>
+<use href="#d-b" x="506.75" y="202.7"/>
+<use href="#d-b" x="628.37" y="202.7"/>
+<use href="#d-t" x="648.64" y="202.7"/>
+<use href="#d-r" x="790.53" y="202.7"/>
+<use href="#d-b" x="810.8" y="202.7"/>
+<use href="#d-r" x="972.96" y="202.7"/>
+<use href="#d-b" x="993.23" y="202.7"/>
+<use href="#d-r" x="1033.77" y="202.7"/>
+<use href="#d-b" x="1054.04" y="202.7"/>
+<use href="#d-t" x="1074.31" y="202.7"/>
+<use href="#d-b" x="1114.85" y="202.7"/>
+<use href="#d-t" x="1135.12" y="202.7"/>
+<use href="#d-r" x="1155.39" y="202.7"/>
+<use href="#d-b" x="1175.66" y="202.7"/>
+<use href="#d-t" x="1195.93" y="202.7"/>
+<use href="#d-r" x="1216.2" y="202.7"/>
+<use href="#d-b" x="1236.47" y="202.7"/>
+<use href="#d-t" x="1256.74" y="202.7"/>
+<use href="#d-r" x="1277.01" y="202.7"/>
+<use href="#d-b" x="1297.28" y="202.7"/>
+<use href="#d-t" x="1317.55" y="202.7"/>
+<use href="#d-r" x="1337.82" y="202.7"/>
+<use href="#d-b" x="1358.09" y="202.7"/>
+<use href="#d-t" x="1378.36" y="202.7"/>
+<use href="#d-r" x="1398.63" y="202.7"/>
+<use href="#d-b" x="1418.9" y="202.7"/>
+<use href="#d-t" x="1439.17" y="202.7"/>
+<use href="#d-r" x="1459.44" y="202.7"/>
+<use href="#d-b" x="1479.71" y="202.7"/>
+<use href="#d-t" x="1499.98" y="202.7"/>
+<use href="#d-r" x="1520.25" y="202.7"/>
+<use href="#d-b" x="1540.52" y="202.7"/>
+<use href="#d-t" x="1560.79" y="202.7"/>
+<use href="#d-r" x="1581.06" y="202.7"/>
+<use href="#d-b" x="1601.33" y="202.7"/>
+<use href="#d-t" x="1621.6" y="202.7"/>
+<use href="#d-r" x="1641.87" y="202.7"/>
+<use href="#d-b" x="1662.14" y="202.7"/>
+<use href="#d-t" x="1682.41" y="202.7"/>
+<use href="#d-r" x="1702.68" y="202.7"/>
+<use href="#d-b" x="1722.95" y="202.7"/>
+<use href="#d-t" x="1743.22" y="202.7"/>
+<use href="#d-r" x="1763.49" y="202.7"/>
+<use href="#d-b" x="1783.76" y="202.7"/>
+<use href="#d-t" x="1804.03" y="202.7"/>
+<use href="#d-r" x="1824.3" y="202.7"/>
+<use href="#d-b" x="1844.57" y="202.7"/>
+<use href="#d-r" x="0" y="222.97"/>
+<use href="#d-b" x="20.27" y="222.97"/>
+<use href="#d-t" x="40.54" y="222.97"/>
+<use href="#d-r" x="60.81" y="222.97"/>
+<use href="#d-b" x="81.08" y="222.97"/>
+<use href="#d-t" x="101.35" y="222.97"/>
+<use href="#d-r" x="121.62" y="222.97"/>
+<use href="#d-b" x="141.89" y="222.97"/>
+<use href="#d-t" x="162.16" y="222.97"/>
+<use href="#d-r" x="182.43" y="222.97"/>
+<use href="#d-b" x="202.7" y="222.97"/>
+<use href="#d-t" x="222.97" y="222.97"/>
+<use href="#d-r" x="243.24" y="222.97"/>
+<use href="#d-b" x="263.51" y="222.97"/>
+<use href="#d-t" x="283.78" y="222.97"/>
+<use href="#d-r" x="304.05" y="222.97"/>
+<use href="#d-b" x="324.32" y="222.97"/>
+<use href="#d-t" x="344.59" y="222.97"/>
+<use href="#d-r" x="364.86" y="222.97"/>
+<use href="#d-t" x="405.4" y="222.97"/>
+<use href="#d-r" x="425.67" y="222.97"/>
+<use href="#d-b" x="445.94" y="222.97"/>
+<use href="#d-r" x="486.48" y="222.97"/>
+<use href="#d-t" x="648.64" y="222.97"/>
+<use href="#d-b" x="932.42" y="222.97"/>
+<use href="#d-t" x="952.69" y="222.97"/>
+<use href="#d-r" x="972.96" y="222.97"/>
+<use href="#d-r" x="1033.77" y="222.97"/>
+<use href="#d-b" x="1054.04" y="222.97"/>
+<use href="#d-t" x="1074.31" y="222.97"/>
+<use href="#d-r" x="1094.58" y="222.97"/>
+<use href="#d-b" x="1114.85" y="222.97"/>
+<use href="#d-t" x="1135.12" y="222.97"/>
+<use href="#d-r" x="1155.39" y="222.97"/>
+<use href="#d-b" x="1175.66" y="222.97"/>
+<use href="#d-t" x="1195.93" y="222.97"/>
+<use href="#d-r" x="1216.2" y="222.97"/>
+<use href="#d-b" x="1236.47" y="222.97"/>
+<use href="#d-t" x="1256.74" y="222.97"/>
+<use href="#d-r" x="1277.01" y="222.97"/>
+<use href="#d-b" x="1297.28" y="222.97"/>
+<use href="#d-t" x="1317.55" y="222.97"/>
+<use href="#d-r" x="1337.82" y="222.97"/>
+<use href="#d-b" x="1358.09" y="222.97"/>
+<use href="#d-t" x="1378.36" y="222.97"/>
+<use href="#d-r" x="1398.63" y="222.97"/>
+<use href="#d-b" x="1418.9" y="222.97"/>
+<use href="#d-t" x="1439.17" y="222.97"/>
+<use href="#d-r" x="1459.44" y="222.97"/>
+<use href="#d-b" x="1479.71" y="222.97"/>
+<use href="#d-t" x="1499.98" y="222.97"/>
+<use href="#d-r" x="1520.25" y="222.97"/>
+<use href="#d-b" x="1540.52" y="222.97"/>
+<use href="#d-t" x="1560.79" y="222.97"/>
+<use href="#d-r" x="1581.06" y="222.97"/>
+<use href="#d-b" x="1601.33" y="222.97"/>
+<use href="#d-t" x="1621.6" y="222.97"/>
+<use href="#d-r" x="1641.87" y="222.97"/>
+<use href="#d-b" x="1662.14" y="222.97"/>
+<use href="#d-t" x="1682.41" y="222.97"/>
+<use href="#d-r" x="1702.68" y="222.97"/>
+<use href="#d-b" x="1722.95" y="222.97"/>
+<use href="#d-t" x="1804.03" y="222.97"/>
+<use href="#d-r" x="1824.3" y="222.97"/>
+<use href="#d-b" x="20.27" y="243.24"/>
+<use href="#d-t" x="40.54" y="243.24"/>
+<use href="#d-r" x="60.81" y="243.24"/>
+<use href="#d-t" x="162.16" y="243.24"/>
+<use href="#d-r" x="182.43" y="243.24"/>
+<use href="#d-b" x="202.7" y="243.24"/>
+<use href="#d-t" x="222.97" y="243.24"/>
+<use href="#d-r" x="243.24" y="243.24"/>
+<use href="#d-b" x="263.51" y="243.24"/>
+<use href="#d-t" x="283.78" y="243.24"/>
+<use href="#d-r" x="304.05" y="243.24"/>
+<use href="#d-b" x="324.32" y="243.24"/>
+<use href="#d-t" x="344.59" y="243.24"/>
+<use href="#d-r" x="364.86" y="243.24"/>
+<use href="#d-t" x="405.4" y="243.24"/>
+<use href="#d-r" x="425.67" y="243.24"/>
+<use href="#d-b" x="445.94" y="243.24"/>
+<use href="#d-r" x="486.48" y="243.24"/>
+<use href="#d-b" x="506.75" y="243.24"/>
+<use href="#d-b" x="932.42" y="243.24"/>
+<use href="#d-r" x="972.96" y="243.24"/>
+<use href="#d-t" x="1074.31" y="243.24"/>
+<use href="#d-r" x="1094.58" y="243.24"/>
+<use href="#d-b" x="1114.85" y="243.24"/>
+<use href="#d-t" x="1135.12" y="243.24"/>
+<use href="#d-r" x="1155.39" y="243.24"/>
+<use href="#d-b" x="1175.66" y="243.24"/>
+<use href="#d-t" x="1195.93" y="243.24"/>
+<use href="#d-r" x="1216.2" y="243.24"/>
+<use href="#d-b" x="1236.47" y="243.24"/>
+<use href="#d-t" x="1256.74" y="243.24"/>
+<use href="#d-r" x="1277.01" y="243.24"/>
+<use href="#d-b" x="1297.28" y="243.24"/>
+<use href="#d-t" x="1317.55" y="243.24"/>
+<use href="#d-r" x="1337.82" y="243.24"/>
+<use href="#d-b" x="1358.09" y="243.24"/>
+<use href="#d-t" x="1378.36" y="243.24"/>
+<use href="#d-r" x="1398.63" y="243.24"/>
+<use href="#d-b" x="1418.9" y="243.24"/>
+<use href="#d-t" x="1439.17" y="243.24"/>
+<use href="#d-r" x="1459.44" y="243.24"/>
+<use href="#d-b" x="1479.71" y="243.24"/>
+<use href="#d-t" x="1499.98" y="243.24"/>
+<use href="#d-r" x="1520.25" y="243.24"/>
+<use href="#d-b" x="1540.52" y="243.24"/>
+<use href="#d-t" x="1560.79" y="243.24"/>
+<use href="#d-r" x="1581.06" y="243.24"/>
+<use href="#d-b" x="1601.33" y="243.24"/>
+<use href="#d-t" x="1621.6" y="243.24"/>
+<use href="#d-r" x="1641.87" y="243.24"/>
+<use href="#d-t" x="40.54" y="263.51"/>
+<use href="#d-r" x="182.43" y="263.51"/>
+<use href="#d-b" x="202.7" y="263.51"/>
+<use href="#d-t" x="222.97" y="263.51"/>
+<use href="#d-r" x="243.24" y="263.51"/>
+<use href="#d-b" x="263.51" y="263.51"/>
+<use href="#d-t" x="283.78" y="263.51"/>
+<use href="#d-r" x="304.05" y="263.51"/>
+<use href="#d-b" x="324.32" y="263.51"/>
+<use href="#d-t" x="344.59" y="263.51"/>
+<use href="#d-r" x="364.86" y="263.51"/>
+<use href="#d-b" x="385.13" y="263.51"/>
+<use href="#d-r" x="425.67" y="263.51"/>
+<use href="#d-b" x="445.94" y="263.51"/>
+<use href="#d-t" x="466.21" y="263.51"/>
+<use href="#d-r" x="486.48" y="263.51"/>
+<use href="#d-b" x="506.75" y="263.51"/>
+<use href="#d-t" x="527.02" y="263.51"/>
+<use href="#d-r" x="547.29" y="263.51"/>
+<use href="#d-b" x="871.61" y="263.51"/>
+<use href="#d-r" x="1033.77" y="263.51"/>
+<use href="#d-b" x="1054.04" y="263.51"/>
+<use href="#d-t" x="1074.31" y="263.51"/>
+<use href="#d-r" x="1094.58" y="263.51"/>
+<use href="#d-b" x="1114.85" y="263.51"/>
+<use href="#d-t" x="1135.12" y="263.51"/>
+<use href="#d-r" x="1155.39" y="263.51"/>
+<use href="#d-b" x="1175.66" y="263.51"/>
+<use href="#d-t" x="1195.93" y="263.51"/>
+<use href="#d-r" x="1216.2" y="263.51"/>
+<use href="#d-b" x="1236.47" y="263.51"/>
+<use href="#d-t" x="1256.74" y="263.51"/>
+<use href="#d-r" x="1277.01" y="263.51"/>
+<use href="#d-b" x="1297.28" y="263.51"/>
+<use href="#d-t" x="1317.55" y="263.51"/>
+<use href="#d-r" x="1337.82" y="263.51"/>
+<use href="#d-b" x="1358.09" y="263.51"/>
+<use href="#d-t" x="1378.36" y="263.51"/>
+<use href="#d-r" x="1398.63" y="263.51"/>
+<use href="#d-b" x="1418.9" y="263.51"/>
+<use href="#d-t" x="1439.17" y="263.51"/>
+<use href="#d-r" x="1459.44" y="263.51"/>
+<use href="#d-b" x="1479.71" y="263.51"/>
+<use href="#d-t" x="1499.98" y="263.51"/>
+<use href="#d-r" x="1520.25" y="263.51"/>
+<use href="#d-b" x="1540.52" y="263.51"/>
+<use href="#d-t" x="1560.79" y="263.51"/>
+<use href="#d-r" x="1581.06" y="263.51"/>
+<use href="#d-b" x="1601.33" y="263.51"/>
+<use href="#d-t" x="1621.6" y="263.51"/>
+<use href="#d-r" x="1763.49" y="263.51"/>
+<use href="#d-b" x="202.7" y="283.78"/>
+<use href="#d-t" x="222.97" y="283.78"/>
+<use href="#d-r" x="243.24" y="283.78"/>
+<use href="#d-b" x="263.51" y="283.78"/>
+<use href="#d-t" x="283.78" y="283.78"/>
+<use href="#d-r" x="304.05" y="283.78"/>
+<use href="#d-b" x="324.32" y="283.78"/>
+<use href="#d-t" x="344.59" y="283.78"/>
+<use href="#d-r" x="364.86" y="283.78"/>
+<use href="#d-b" x="385.13" y="283.78"/>
+<use href="#d-t" x="405.4" y="283.78"/>
+<use href="#d-r" x="425.67" y="283.78"/>
+<use href="#d-r" x="486.48" y="283.78"/>
+<use href="#d-b" x="506.75" y="283.78"/>
+<use href="#d-t" x="527.02" y="283.78"/>
+<use href="#d-r" x="547.29" y="283.78"/>
+<use href="#d-b" x="567.56" y="283.78"/>
+<use href="#d-r" x="851.34" y="283.78"/>
+<use href="#d-t" x="891.88" y="283.78"/>
+<use href="#d-t" x="1013.5" y="283.78"/>
+<use href="#d-r" x="1033.77" y="283.78"/>
+<use href="#d-b" x="1054.04" y="283.78"/>
+<use href="#d-t" x="1074.31" y="283.78"/>
+<use href="#d-r" x="1094.58" y="283.78"/>
+<use href="#d-b" x="1114.85" y="283.78"/>
+<use href="#d-t" x="1135.12" y="283.78"/>
+<use href="#d-r" x="1155.39" y="283.78"/>
+<use href="#d-b" x="1175.66" y="283.78"/>
+<use href="#d-t" x="1195.93" y="283.78"/>
+<use href="#d-r" x="1216.2" y="283.78"/>
+<use href="#d-b" x="1236.47" y="283.78"/>
+<use href="#d-t" x="1256.74" y="283.78"/>
+<use href="#d-r" x="1277.01" y="283.78"/>
+<use href="#d-b" x="1297.28" y="283.78"/>
+<use href="#d-t" x="1317.55" y="283.78"/>
+<use href="#d-r" x="1337.82" y="283.78"/>
+<use href="#d-b" x="1358.09" y="283.78"/>
+<use href="#d-t" x="1378.36" y="283.78"/>
+<use href="#d-r" x="1398.63" y="283.78"/>
+<use href="#d-b" x="1418.9" y="283.78"/>
+<use href="#d-t" x="1439.17" y="283.78"/>
+<use href="#d-r" x="1459.44" y="283.78"/>
+<use href="#d-t" x="1499.98" y="283.78"/>
+<use href="#d-r" x="1520.25" y="283.78"/>
+<use href="#d-b" x="1540.52" y="283.78"/>
+<use href="#d-t" x="1560.79" y="283.78"/>
+<use href="#d-r" x="1581.06" y="283.78"/>
+<use href="#d-b" x="1601.33" y="283.78"/>
+<use href="#d-t" x="1621.6" y="283.78"/>
+<use href="#d-t" x="1743.22" y="283.78"/>
+<use href="#d-t" x="222.97" y="304.05"/>
+<use href="#d-r" x="243.24" y="304.05"/>
+<use href="#d-b" x="263.51" y="304.05"/>
+<use href="#d-t" x="283.78" y="304.05"/>
+<use href="#d-r" x="304.05" y="304.05"/>
+<use href="#d-b" x="324.32" y="304.05"/>
+<use href="#d-t" x="344.59" y="304.05"/>
+<use href="#d-r" x="364.86" y="304.05"/>
+<use href="#d-b" x="385.13" y="304.05"/>
+<use href="#d-t" x="405.4" y="304.05"/>
+<use href="#d-r" x="425.67" y="304.05"/>
+<use href="#d-b" x="445.94" y="304.05"/>
+<use href="#d-r" x="486.48" y="304.05"/>
+<use href="#d-b" x="506.75" y="304.05"/>
+<use href="#d-t" x="527.02" y="304.05"/>
+<use href="#d-b" x="567.56" y="304.05"/>
+<use href="#d-b" x="932.42" y="304.05"/>
+<use href="#d-t" x="952.69" y="304.05"/>
+<use href="#d-r" x="972.96" y="304.05"/>
+<use href="#d-b" x="993.23" y="304.05"/>
+<use href="#d-t" x="1013.5" y="304.05"/>
+<use href="#d-r" x="1033.77" y="304.05"/>
+<use href="#d-b" x="1054.04" y="304.05"/>
+<use href="#d-t" x="1074.31" y="304.05"/>
+<use href="#d-r" x="1094.58" y="304.05"/>
+<use href="#d-b" x="1114.85" y="304.05"/>
+<use href="#d-t" x="1135.12" y="304.05"/>
+<use href="#d-r" x="1155.39" y="304.05"/>
+<use href="#d-b" x="1175.66" y="304.05"/>
+<use href="#d-t" x="1195.93" y="304.05"/>
+<use href="#d-r" x="1216.2" y="304.05"/>
+<use href="#d-b" x="1236.47" y="304.05"/>
+<use href="#d-t" x="1256.74" y="304.05"/>
+<use href="#d-r" x="1277.01" y="304.05"/>
+<use href="#d-b" x="1297.28" y="304.05"/>
+<use href="#d-t" x="1317.55" y="304.05"/>
+<use href="#d-r" x="1337.82" y="304.05"/>
+<use href="#d-b" x="1358.09" y="304.05"/>
+<use href="#d-t" x="1378.36" y="304.05"/>
+<use href="#d-r" x="1398.63" y="304.05"/>
+<use href="#d-b" x="1418.9" y="304.05"/>
+<use href="#d-t" x="1439.17" y="304.05"/>
+<use href="#d-b" x="1479.71" y="304.05"/>
+<use href="#d-t" x="1499.98" y="304.05"/>
+<use href="#d-r" x="1520.25" y="304.05"/>
+<use href="#d-b" x="1540.52" y="304.05"/>
+<use href="#d-t" x="1560.79" y="304.05"/>
+<use href="#d-r" x="1581.06" y="304.05"/>
+<use href="#d-b" x="1601.33" y="304.05"/>
+<use href="#d-t" x="1621.6" y="304.05"/>
+<use href="#d-r" x="1641.87" y="304.05"/>
+<use href="#d-r" x="243.24" y="324.32"/>
+<use href="#d-b" x="263.51" y="324.32"/>
+<use href="#d-t" x="283.78" y="324.32"/>
+<use href="#d-r" x="304.05" y="324.32"/>
+<use href="#d-b" x="324.32" y="324.32"/>
+<use href="#d-t" x="344.59" y="324.32"/>
+<use href="#d-r" x="364.86" y="324.32"/>
+<use href="#d-b" x="385.13" y="324.32"/>
+<use href="#d-t" x="405.4" y="324.32"/>
+<use href="#d-r" x="425.67" y="324.32"/>
+<use href="#d-b" x="445.94" y="324.32"/>
+<use href="#d-t" x="466.21" y="324.32"/>
+<use href="#d-r" x="486.48" y="324.32"/>
+<use href="#d-b" x="506.75" y="324.32"/>
+<use href="#d-t" x="527.02" y="324.32"/>
+<use href="#d-r" x="547.29" y="324.32"/>
+<use href="#d-t" x="587.83" y="324.32"/>
+<use href="#d-t" x="891.88" y="324.32"/>
+<use href="#d-r" x="912.15" y="324.32"/>
+<use href="#d-b" x="932.42" y="324.32"/>
+<use href="#d-t" x="952.69" y="324.32"/>
+<use href="#d-r" x="972.96" y="324.32"/>
+<use href="#d-b" x="993.23" y="324.32"/>
+<use href="#d-t" x="1013.5" y="324.32"/>
+<use href="#d-r" x="1033.77" y="324.32"/>
+<use href="#d-b" x="1054.04" y="324.32"/>
+<use href="#d-t" x="1074.31" y="324.32"/>
+<use href="#d-r" x="1094.58" y="324.32"/>
+<use href="#d-b" x="1114.85" y="324.32"/>
+<use href="#d-t" x="1135.12" y="324.32"/>
+<use href="#d-r" x="1155.39" y="324.32"/>
+<use href="#d-b" x="1175.66" y="324.32"/>
+<use href="#d-t" x="1195.93" y="324.32"/>
+<use href="#d-r" x="1216.2" y="324.32"/>
+<use href="#d-b" x="1236.47" y="324.32"/>
+<use href="#d-t" x="1256.74" y="324.32"/>
+<use href="#d-r" x="1277.01" y="324.32"/>
+<use href="#d-b" x="1297.28" y="324.32"/>
+<use href="#d-t" x="1317.55" y="324.32"/>
+<use href="#d-r" x="1337.82" y="324.32"/>
+<use href="#d-b" x="1358.09" y="324.32"/>
+<use href="#d-t" x="1378.36" y="324.32"/>
+<use href="#d-r" x="1398.63" y="324.32"/>
+<use href="#d-b" x="1418.9" y="324.32"/>
+<use href="#d-t" x="1439.17" y="324.32"/>
+<use href="#d-r" x="1459.44" y="324.32"/>
+<use href="#d-b" x="1479.71" y="324.32"/>
+<use href="#d-t" x="1499.98" y="324.32"/>
+<use href="#d-r" x="1520.25" y="324.32"/>
+<use href="#d-b" x="1540.52" y="324.32"/>
+<use href="#d-t" x="1560.79" y="324.32"/>
+<use href="#d-r" x="1581.06" y="324.32"/>
+<use href="#d-b" x="1601.33" y="324.32"/>
+<use href="#d-t" x="1621.6" y="324.32"/>
+<use href="#d-r" x="1641.87" y="324.32"/>
+<use href="#d-r" x="243.24" y="344.59"/>
+<use href="#d-b" x="263.51" y="344.59"/>
+<use href="#d-t" x="283.78" y="344.59"/>
+<use href="#d-r" x="304.05" y="344.59"/>
+<use href="#d-b" x="324.32" y="344.59"/>
+<use href="#d-t" x="344.59" y="344.59"/>
+<use href="#d-r" x="364.86" y="344.59"/>
+<use href="#d-b" x="385.13" y="344.59"/>
+<use href="#d-t" x="405.4" y="344.59"/>
+<use href="#d-r" x="425.67" y="344.59"/>
+<use href="#d-b" x="445.94" y="344.59"/>
+<use href="#d-t" x="466.21" y="344.59"/>
+<use href="#d-r" x="486.48" y="344.59"/>
+<use href="#d-b" x="506.75" y="344.59"/>
+<use href="#d-r" x="912.15" y="344.59"/>
+<use href="#d-b" x="932.42" y="344.59"/>
+<use href="#d-t" x="952.69" y="344.59"/>
+<use href="#d-b" x="993.23" y="344.59"/>
+<use href="#d-t" x="1013.5" y="344.59"/>
+<use href="#d-r" x="1033.77" y="344.59"/>
+<use href="#d-b" x="1114.85" y="344.59"/>
+<use href="#d-t" x="1135.12" y="344.59"/>
+<use href="#d-t" x="1195.93" y="344.59"/>
+<use href="#d-r" x="1216.2" y="344.59"/>
+<use href="#d-b" x="1236.47" y="344.59"/>
+<use href="#d-t" x="1256.74" y="344.59"/>
+<use href="#d-r" x="1277.01" y="344.59"/>
+<use href="#d-b" x="1297.28" y="344.59"/>
+<use href="#d-t" x="1317.55" y="344.59"/>
+<use href="#d-r" x="1337.82" y="344.59"/>
+<use href="#d-b" x="1358.09" y="344.59"/>
+<use href="#d-t" x="1378.36" y="344.59"/>
+<use href="#d-r" x="1398.63" y="344.59"/>
+<use href="#d-b" x="1418.9" y="344.59"/>
+<use href="#d-t" x="1439.17" y="344.59"/>
+<use href="#d-r" x="1459.44" y="344.59"/>
+<use href="#d-b" x="1479.71" y="344.59"/>
+<use href="#d-t" x="1499.98" y="344.59"/>
+<use href="#d-r" x="1520.25" y="344.59"/>
+<use href="#d-b" x="1540.52" y="344.59"/>
+<use href="#d-t" x="1560.79" y="344.59"/>
+<use href="#d-r" x="1581.06" y="344.59"/>
+<use href="#d-b" x="1601.33" y="344.59"/>
+<use href="#d-t" x="1621.6" y="344.59"/>
+<use href="#d-t" x="222.97" y="364.86"/>
+<use href="#d-r" x="243.24" y="364.86"/>
+<use href="#d-b" x="263.51" y="364.86"/>
+<use href="#d-t" x="283.78" y="364.86"/>
+<use href="#d-r" x="304.05" y="364.86"/>
+<use href="#d-b" x="324.32" y="364.86"/>
+<use href="#d-t" x="344.59" y="364.86"/>
+<use href="#d-r" x="364.86" y="364.86"/>
+<use href="#d-b" x="385.13" y="364.86"/>
+<use href="#d-t" x="405.4" y="364.86"/>
+<use href="#d-r" x="425.67" y="364.86"/>
+<use href="#d-b" x="445.94" y="364.86"/>
+<use href="#d-t" x="466.21" y="364.86"/>
+<use href="#d-r" x="486.48" y="364.86"/>
+<use href="#d-r" x="851.34" y="364.86"/>
+<use href="#d-b" x="871.61" y="364.86"/>
+<use href="#d-t" x="891.88" y="364.86"/>
+<use href="#d-t" x="1013.5" y="364.86"/>
+<use href="#d-r" x="1033.77" y="364.86"/>
+<use href="#d-t" x="1135.12" y="364.86"/>
+<use href="#d-t" x="1195.93" y="364.86"/>
+<use href="#d-r" x="1216.2" y="364.86"/>
+<use href="#d-b" x="1236.47" y="364.86"/>
+<use href="#d-t" x="1256.74" y="364.86"/>
+<use href="#d-r" x="1277.01" y="364.86"/>
+<use href="#d-b" x="1297.28" y="364.86"/>
+<use href="#d-t" x="1317.55" y="364.86"/>
+<use href="#d-r" x="1337.82" y="364.86"/>
+<use href="#d-b" x="1358.09" y="364.86"/>
+<use href="#d-t" x="1378.36" y="364.86"/>
+<use href="#d-r" x="1398.63" y="364.86"/>
+<use href="#d-b" x="1418.9" y="364.86"/>
+<use href="#d-t" x="1439.17" y="364.86"/>
+<use href="#d-r" x="1459.44" y="364.86"/>
+<use href="#d-b" x="1479.71" y="364.86"/>
+<use href="#d-t" x="1499.98" y="364.86"/>
+<use href="#d-r" x="1520.25" y="364.86"/>
+<use href="#d-b" x="1540.52" y="364.86"/>
+<use href="#d-t" x="1560.79" y="364.86"/>
+<use href="#d-r" x="1581.06" y="364.86"/>
+<use href="#d-b" x="1662.14" y="364.86"/>
+<use href="#d-r" x="243.24" y="385.13"/>
+<use href="#d-b" x="263.51" y="385.13"/>
+<use href="#d-t" x="283.78" y="385.13"/>
+<use href="#d-r" x="304.05" y="385.13"/>
+<use href="#d-b" x="324.32" y="385.13"/>
+<use href="#d-t" x="344.59" y="385.13"/>
+<use href="#d-r" x="364.86" y="385.13"/>
+<use href="#d-b" x="385.13" y="385.13"/>
+<use href="#d-t" x="405.4" y="385.13"/>
+<use href="#d-r" x="425.67" y="385.13"/>
+<use href="#d-b" x="445.94" y="385.13"/>
+<use href="#d-t" x="466.21" y="385.13"/>
+<use href="#d-r" x="851.34" y="385.13"/>
+<use href="#d-b" x="871.61" y="385.13"/>
+<use href="#d-t" x="1013.5" y="385.13"/>
+<use href="#d-b" x="1054.04" y="385.13"/>
+<use href="#d-t" x="1074.31" y="385.13"/>
+<use href="#d-r" x="1094.58" y="385.13"/>
+<use href="#d-b" x="1114.85" y="385.13"/>
+<use href="#d-t" x="1135.12" y="385.13"/>
+<use href="#d-t" x="1195.93" y="385.13"/>
+<use href="#d-r" x="1216.2" y="385.13"/>
+<use href="#d-b" x="1236.47" y="385.13"/>
+<use href="#d-t" x="1256.74" y="385.13"/>
+<use href="#d-r" x="1277.01" y="385.13"/>
+<use href="#d-b" x="1297.28" y="385.13"/>
+<use href="#d-t" x="1317.55" y="385.13"/>
+<use href="#d-r" x="1337.82" y="385.13"/>
+<use href="#d-b" x="1358.09" y="385.13"/>
+<use href="#d-t" x="1378.36" y="385.13"/>
+<use href="#d-r" x="1398.63" y="385.13"/>
+<use href="#d-b" x="1418.9" y="385.13"/>
+<use href="#d-t" x="1439.17" y="385.13"/>
+<use href="#d-r" x="1459.44" y="385.13"/>
+<use href="#d-b" x="1479.71" y="385.13"/>
+<use href="#d-t" x="1499.98" y="385.13"/>
+<use href="#d-r" x="1520.25" y="385.13"/>
+<use href="#d-b" x="1662.14" y="385.13"/>
+<use href="#d-r" x="243.24" y="405.4"/>
+<use href="#d-b" x="263.51" y="405.4"/>
+<use href="#d-t" x="283.78" y="405.4"/>
+<use href="#d-r" x="304.05" y="405.4"/>
+<use href="#d-b" x="324.32" y="405.4"/>
+<use href="#d-t" x="344.59" y="405.4"/>
+<use href="#d-r" x="364.86" y="405.4"/>
+<use href="#d-b" x="385.13" y="405.4"/>
+<use href="#d-t" x="405.4" y="405.4"/>
+<use href="#d-r" x="425.67" y="405.4"/>
+<use href="#d-b" x="445.94" y="405.4"/>
+<use href="#d-t" x="466.21" y="405.4"/>
+<use href="#d-r" x="912.15" y="405.4"/>
+<use href="#d-r" x="1094.58" y="405.4"/>
+<use href="#d-b" x="1114.85" y="405.4"/>
+<use href="#d-t" x="1135.12" y="405.4"/>
+<use href="#d-r" x="1155.39" y="405.4"/>
+<use href="#d-t" x="1195.93" y="405.4"/>
+<use href="#d-r" x="1216.2" y="405.4"/>
+<use href="#d-b" x="1236.47" y="405.4"/>
+<use href="#d-t" x="1256.74" y="405.4"/>
+<use href="#d-r" x="1277.01" y="405.4"/>
+<use href="#d-b" x="1297.28" y="405.4"/>
+<use href="#d-t" x="1317.55" y="405.4"/>
+<use href="#d-r" x="1337.82" y="405.4"/>
+<use href="#d-b" x="1358.09" y="405.4"/>
+<use href="#d-t" x="1378.36" y="405.4"/>
+<use href="#d-r" x="1398.63" y="405.4"/>
+<use href="#d-b" x="1418.9" y="405.4"/>
+<use href="#d-t" x="1439.17" y="405.4"/>
+<use href="#d-r" x="1459.44" y="405.4"/>
+<use href="#d-b" x="1479.71" y="405.4"/>
+<use href="#d-t" x="1499.98" y="405.4"/>
+<use href="#d-r" x="1520.25" y="405.4"/>
+<use href="#d-r" x="1581.06" y="405.4" class="map__dot--hl"/>
+<use href="#d-r" x="1641.87" y="405.4"/>
+<use href="#d-b" x="263.51" y="425.67"/>
+<use href="#d-t" x="283.78" y="425.67"/>
+<use href="#d-r" x="304.05" y="425.67"/>
+<use href="#d-b" x="324.32" y="425.67"/>
+<use href="#d-t" x="344.59" y="425.67"/>
+<use href="#d-r" x="364.86" y="425.67"/>
+<use href="#d-b" x="385.13" y="425.67"/>
+<use href="#d-t" x="405.4" y="425.67"/>
+<use href="#d-r" x="425.67" y="425.67"/>
+<use href="#d-b" x="445.94" y="425.67"/>
+<use href="#d-b" x="871.61" y="425.67"/>
+<use href="#d-t" x="891.88" y="425.67"/>
+<use href="#d-r" x="912.15" y="425.67"/>
+<use href="#d-b" x="932.42" y="425.67"/>
+<use href="#d-r" x="1094.58" y="425.67"/>
+<use href="#d-b" x="1114.85" y="425.67"/>
+<use href="#d-t" x="1135.12" y="425.67"/>
+<use href="#d-r" x="1155.39" y="425.67"/>
+<use href="#d-b" x="1175.66" y="425.67"/>
+<use href="#d-t" x="1195.93" y="425.67"/>
+<use href="#d-r" x="1216.2" y="425.67"/>
+<use href="#d-b" x="1236.47" y="425.67"/>
+<use href="#d-t" x="1256.74" y="425.67"/>
+<use href="#d-r" x="1277.01" y="425.67"/>
+<use href="#d-b" x="1297.28" y="425.67"/>
+<use href="#d-t" x="1317.55" y="425.67"/>
+<use href="#d-r" x="1337.82" y="425.67"/>
+<use href="#d-b" x="1358.09" y="425.67"/>
+<use href="#d-t" x="1378.36" y="425.67"/>
+<use href="#d-r" x="1398.63" y="425.67"/>
+<use href="#d-b" x="1418.9" y="425.67"/>
+<use href="#d-t" x="1439.17" y="425.67"/>
+<use href="#d-r" x="1459.44" y="425.67"/>
+<use href="#d-b" x="1479.71" y="425.67"/>
+<use href="#d-t" x="1499.98" y="425.67"/>
+<use href="#d-r" x="1520.25" y="425.67"/>
+<use href="#d-b" x="1540.52" y="425.67"/>
+<use href="#d-t" x="1621.6" y="425.67"/>
+<use href="#d-r" x="304.05" y="445.94"/>
+<use href="#d-b" x="324.32" y="445.94"/>
+<use href="#d-t" x="344.59" y="445.94"/>
+<use href="#d-r" x="851.34" y="445.94"/>
+<use href="#d-b" x="871.61" y="445.94"/>
+<use href="#d-t" x="891.88" y="445.94"/>
+<use href="#d-r" x="912.15" y="445.94"/>
+<use href="#d-b" x="932.42" y="445.94"/>
+<use href="#d-t" x="952.69" y="445.94"/>
+<use href="#d-r" x="972.96" y="445.94"/>
+<use href="#d-b" x="993.23" y="445.94"/>
+<use href="#d-t" x="1013.5" y="445.94"/>
+<use href="#d-r" x="1033.77" y="445.94"/>
+<use href="#d-b" x="1054.04" y="445.94"/>
+<use href="#d-r" x="1094.58" y="445.94"/>
+<use href="#d-b" x="1114.85" y="445.94"/>
+<use href="#d-t" x="1135.12" y="445.94"/>
+<use href="#d-t" x="1195.93" y="445.94"/>
+<use href="#d-r" x="1216.2" y="445.94"/>
+<use href="#d-b" x="1236.47" y="445.94"/>
+<use href="#d-t" x="1256.74" y="445.94"/>
+<use href="#d-r" x="1277.01" y="445.94"/>
+<use href="#d-b" x="1297.28" y="445.94"/>
+<use href="#d-t" x="1317.55" y="445.94"/>
+<use href="#d-r" x="1337.82" y="445.94"/>
+<use href="#d-b" x="1358.09" y="445.94"/>
+<use href="#d-t" x="1378.36" y="445.94"/>
+<use href="#d-r" x="1398.63" y="445.94"/>
+<use href="#d-b" x="1418.9" y="445.94"/>
+<use href="#d-t" x="1439.17" y="445.94"/>
+<use href="#d-r" x="1459.44" y="445.94"/>
+<use href="#d-b" x="1479.71" y="445.94"/>
+<use href="#d-t" x="1499.98" y="445.94"/>
+<use href="#d-r" x="1520.25" y="445.94"/>
+<use href="#d-b" x="1540.52" y="445.94"/>
+<use href="#d-t" x="283.78" y="466.21"/>
+<use href="#d-b" x="324.32" y="466.21"/>
+<use href="#d-t" x="344.59" y="466.21"/>
+<use href="#d-b" x="445.94" y="466.21"/>
+<use href="#d-t" x="831.07" y="466.21"/>
+<use href="#d-r" x="851.34" y="466.21"/>
+<use href="#d-b" x="871.61" y="466.21"/>
+<use href="#d-t" x="891.88" y="466.21"/>
+<use href="#d-r" x="912.15" y="466.21"/>
+<use href="#d-b" x="932.42" y="466.21"/>
+<use href="#d-t" x="952.69" y="466.21"/>
+<use href="#d-r" x="972.96" y="466.21"/>
+<use href="#d-b" x="993.23" y="466.21"/>
+<use href="#d-t" x="1013.5" y="466.21"/>
+<use href="#d-r" x="1033.77" y="466.21"/>
+<use href="#d-b" x="1054.04" y="466.21"/>
+<use href="#d-b" x="1114.85" y="466.21"/>
+<use href="#d-t" x="1135.12" y="466.21"/>
+<use href="#d-r" x="1155.39" y="466.21"/>
+<use href="#d-r" x="1277.01" y="466.21"/>
+<use href="#d-b" x="1297.28" y="466.21"/>
+<use href="#d-t" x="1317.55" y="466.21"/>
+<use href="#d-r" x="1337.82" y="466.21"/>
+<use href="#d-b" x="1358.09" y="466.21"/>
+<use href="#d-t" x="1378.36" y="466.21"/>
+<use href="#d-r" x="1398.63" y="466.21"/>
+<use href="#d-b" x="1418.9" y="466.21"/>
+<use href="#d-t" x="1439.17" y="466.21"/>
+<use href="#d-r" x="1459.44" y="466.21"/>
+<use href="#d-b" x="1479.71" y="466.21"/>
+<use href="#d-t" x="1499.98" y="466.21"/>
+<use href="#d-r" x="1520.25" y="466.21"/>
+<use href="#d-b" x="324.32" y="486.48"/>
+<use href="#d-t" x="344.59" y="486.48"/>
+<use href="#d-b" x="445.94" y="486.48"/>
+<use href="#d-b" x="810.8" y="486.48"/>
+<use href="#d-t" x="831.07" y="486.48"/>
+<use href="#d-r" x="851.34" y="486.48"/>
+<use href="#d-b" x="871.61" y="486.48"/>
+<use href="#d-t" x="891.88" y="486.48"/>
+<use href="#d-r" x="912.15" y="486.48"/>
+<use href="#d-b" x="932.42" y="486.48"/>
+<use href="#d-t" x="952.69" y="486.48"/>
+<use href="#d-r" x="972.96" y="486.48"/>
+<use href="#d-b" x="993.23" y="486.48"/>
+<use href="#d-t" x="1013.5" y="486.48"/>
+<use href="#d-r" x="1033.77" y="486.48"/>
+<use href="#d-b" x="1054.04" y="486.48"/>
+<use href="#d-t" x="1074.31" y="486.48"/>
+<use href="#d-b" x="1114.85" y="486.48"/>
+<use href="#d-t" x="1135.12" y="486.48"/>
+<use href="#d-r" x="1155.39" y="486.48"/>
+<use href="#d-b" x="1175.66" y="486.48"/>
+<use href="#d-t" x="1195.93" y="486.48"/>
+<use href="#d-b" x="1297.28" y="486.48"/>
+<use href="#d-t" x="1317.55" y="486.48"/>
+<use href="#d-r" x="1337.82" y="486.48"/>
+<use href="#d-b" x="1358.09" y="486.48"/>
+<use href="#d-b" x="1418.9" y="486.48"/>
+<use href="#d-t" x="1439.17" y="486.48"/>
+<use href="#d-r" x="1459.44" y="486.48"/>
+<use href="#d-t" x="344.59" y="506.75"/>
+<use href="#d-r" x="364.86" y="506.75"/>
+<use href="#d-b" x="385.13" y="506.75"/>
+<use href="#d-t" x="405.4" y="506.75"/>
+<use href="#d-r" x="486.48" y="506.75"/>
+<use href="#d-b" x="506.75" y="506.75"/>
+<use href="#d-t" x="831.07" y="506.75"/>
+<use href="#d-r" x="851.34" y="506.75"/>
+<use href="#d-b" x="871.61" y="506.75"/>
+<use href="#d-t" x="891.88" y="506.75"/>
+<use href="#d-r" x="912.15" y="506.75"/>
+<use href="#d-b" x="932.42" y="506.75"/>
+<use href="#d-t" x="952.69" y="506.75"/>
+<use href="#d-r" x="972.96" y="506.75"/>
+<use href="#d-b" x="993.23" y="506.75"/>
+<use href="#d-t" x="1013.5" y="506.75"/>
+<use href="#d-r" x="1033.77" y="506.75"/>
+<use href="#d-b" x="1054.04" y="506.75"/>
+<use href="#d-t" x="1074.31" y="506.75"/>
+<use href="#d-t" x="1135.12" y="506.75"/>
+<use href="#d-r" x="1155.39" y="506.75"/>
+<use href="#d-b" x="1175.66" y="506.75"/>
+<use href="#d-b" x="1297.28" y="506.75"/>
+<use href="#d-t" x="1317.55" y="506.75"/>
+<use href="#d-r" x="1337.82" y="506.75"/>
+<use href="#d-b" x="1418.9" y="506.75"/>
+<use href="#d-t" x="1439.17" y="506.75"/>
+<use href="#d-r" x="1459.44" y="506.75"/>
+<use href="#d-t" x="405.4" y="527.02"/>
+<use href="#d-r" x="425.67" y="527.02"/>
+<use href="#d-b" x="810.8" y="527.02"/>
+<use href="#d-t" x="831.07" y="527.02"/>
+<use href="#d-r" x="851.34" y="527.02"/>
+<use href="#d-b" x="871.61" y="527.02"/>
+<use href="#d-t" x="891.88" y="527.02"/>
+<use href="#d-r" x="912.15" y="527.02"/>
+<use href="#d-b" x="932.42" y="527.02"/>
+<use href="#d-t" x="952.69" y="527.02"/>
+<use href="#d-r" x="972.96" y="527.02"/>
+<use href="#d-b" x="993.23" y="527.02"/>
+<use href="#d-t" x="1013.5" y="527.02"/>
+<use href="#d-r" x="1033.77" y="527.02"/>
+<use href="#d-b" x="1054.04" y="527.02"/>
+<use href="#d-t" x="1074.31" y="527.02"/>
+<use href="#d-r" x="1094.58" y="527.02"/>
+<use href="#d-t" x="1135.12" y="527.02"/>
+<use href="#d-t" x="1317.55" y="527.02"/>
+<use href="#d-t" x="1439.17" y="527.02"/>
+<use href="#d-r" x="1459.44" y="527.02"/>
+<use href="#d-t" x="1560.79" y="527.02"/>
+<use href="#d-t" x="831.07" y="547.29"/>
+<use href="#d-r" x="851.34" y="547.29"/>
+<use href="#d-b" x="871.61" y="547.29"/>
+<use href="#d-t" x="891.88" y="547.29"/>
+<use href="#d-r" x="912.15" y="547.29"/>
+<use href="#d-b" x="932.42" y="547.29"/>
+<use href="#d-t" x="952.69" y="547.29"/>
+<use href="#d-r" x="972.96" y="547.29"/>
+<use href="#d-b" x="993.23" y="547.29"/>
+<use href="#d-t" x="1013.5" y="547.29"/>
+<use href="#d-r" x="1033.77" y="547.29"/>
+<use href="#d-b" x="1054.04" y="547.29"/>
+<use href="#d-t" x="1074.31" y="547.29"/>
+<use href="#d-r" x="1094.58" y="547.29"/>
+<use href="#d-b" x="1114.85" y="547.29"/>
+<use href="#d-t" x="1317.55" y="547.29"/>
+<use href="#d-b" x="1479.71" y="547.29"/>
+<use href="#d-r" x="486.48" y="567.56"/>
+<use href="#d-b" x="506.75" y="567.56"/>
+<use href="#d-t" x="527.02" y="567.56"/>
+<use href="#d-r" x="547.29" y="567.56"/>
+<use href="#d-r" x="851.34" y="567.56"/>
+<use href="#d-b" x="871.61" y="567.56"/>
+<use href="#d-t" x="891.88" y="567.56"/>
+<use href="#d-r" x="912.15" y="567.56"/>
+<use href="#d-b" x="932.42" y="567.56"/>
+<use href="#d-t" x="952.69" y="567.56"/>
+<use href="#d-r" x="972.96" y="567.56"/>
+<use href="#d-b" x="993.23" y="567.56"/>
+<use href="#d-t" x="1013.5" y="567.56"/>
+<use href="#d-r" x="1033.77" y="567.56"/>
+<use href="#d-b" x="1054.04" y="567.56"/>
+<use href="#d-t" x="1074.31" y="567.56"/>
+<use href="#d-r" x="1094.58" y="567.56"/>
+<use href="#d-b" x="1114.85" y="567.56"/>
+<use href="#d-t" x="1135.12" y="567.56"/>
+<use href="#d-r" x="1155.39" y="567.56"/>
+<use href="#d-r" x="1581.06" y="567.56"/>
+<use href="#d-r" x="486.48" y="587.83"/>
+<use href="#d-b" x="506.75" y="587.83"/>
+<use href="#d-t" x="527.02" y="587.83"/>
+<use href="#d-r" x="547.29" y="587.83"/>
+<use href="#d-b" x="567.56" y="587.83"/>
+<use href="#d-t" x="587.83" y="587.83"/>
+<use href="#d-t" x="952.69" y="587.83"/>
+<use href="#d-r" x="972.96" y="587.83"/>
+<use href="#d-b" x="993.23" y="587.83"/>
+<use href="#d-t" x="1013.5" y="587.83"/>
+<use href="#d-r" x="1033.77" y="587.83"/>
+<use href="#d-b" x="1054.04" y="587.83"/>
+<use href="#d-t" x="1074.31" y="587.83"/>
+<use href="#d-r" x="1094.58" y="587.83"/>
+<use href="#d-b" x="1114.85" y="587.83"/>
+<use href="#d-t" x="1135.12" y="587.83"/>
+<use href="#d-t" x="1439.17" y="587.83"/>
+<use href="#d-r" x="1520.25" y="587.83"/>
+<use href="#d-t" x="466.21" y="608.1"/>
+<use href="#d-r" x="486.48" y="608.1"/>
+<use href="#d-b" x="506.75" y="608.1"/>
+<use href="#d-t" x="527.02" y="608.1"/>
+<use href="#d-r" x="547.29" y="608.1"/>
+<use href="#d-b" x="567.56" y="608.1"/>
+<use href="#d-t" x="587.83" y="608.1"/>
+<use href="#d-r" x="608.1" y="608.1"/>
+<use href="#d-t" x="952.69" y="608.1"/>
+<use href="#d-r" x="972.96" y="608.1"/>
+<use href="#d-b" x="993.23" y="608.1"/>
+<use href="#d-t" x="1013.5" y="608.1"/>
+<use href="#d-r" x="1033.77" y="608.1"/>
+<use href="#d-b" x="1054.04" y="608.1"/>
+<use href="#d-t" x="1074.31" y="608.1"/>
+<use href="#d-r" x="1094.58" y="608.1"/>
+<use href="#d-b" x="1114.85" y="608.1"/>
+<use href="#d-t" x="1439.17" y="608.1"/>
+<use href="#d-t" x="1499.98" y="608.1"/>
+<use href="#d-r" x="1520.25" y="608.1"/>
+<use href="#d-t" x="466.21" y="628.37"/>
+<use href="#d-r" x="486.48" y="628.37"/>
+<use href="#d-b" x="506.75" y="628.37"/>
+<use href="#d-t" x="527.02" y="628.37"/>
+<use href="#d-r" x="547.29" y="628.37"/>
+<use href="#d-b" x="567.56" y="628.37"/>
+<use href="#d-t" x="587.83" y="628.37"/>
+<use href="#d-r" x="608.1" y="628.37"/>
+<use href="#d-b" x="628.37" y="628.37"/>
+<use href="#d-t" x="648.64" y="628.37"/>
+<use href="#d-r" x="972.96" y="628.37"/>
+<use href="#d-b" x="993.23" y="628.37"/>
+<use href="#d-t" x="1013.5" y="628.37"/>
+<use href="#d-r" x="1033.77" y="628.37"/>
+<use href="#d-b" x="1054.04" y="628.37"/>
+<use href="#d-t" x="1074.31" y="628.37"/>
+<use href="#d-r" x="1094.58" y="628.37"/>
+<use href="#d-r" x="1459.44" y="628.37"/>
+<use href="#d-t" x="1560.79" y="628.37"/>
+<use href="#d-r" x="1641.87" y="628.37"/>
+<use href="#d-r" x="486.48" y="648.64"/>
+<use href="#d-b" x="506.75" y="648.64"/>
+<use href="#d-t" x="527.02" y="648.64"/>
+<use href="#d-r" x="547.29" y="648.64"/>
+<use href="#d-b" x="567.56" y="648.64"/>
+<use href="#d-t" x="587.83" y="648.64"/>
+<use href="#d-r" x="608.1" y="648.64"/>
+<use href="#d-b" x="628.37" y="648.64"/>
+<use href="#d-t" x="648.64" y="648.64"/>
+<use href="#d-r" x="668.91" y="648.64"/>
+<use href="#d-b" x="689.18" y="648.64"/>
+<use href="#d-r" x="972.96" y="648.64"/>
+<use href="#d-b" x="993.23" y="648.64"/>
+<use href="#d-t" x="1013.5" y="648.64"/>
+<use href="#d-r" x="1033.77" y="648.64"/>
+<use href="#d-b" x="1054.04" y="648.64"/>
+<use href="#d-t" x="1074.31" y="648.64"/>
+<use href="#d-r" x="1094.58" y="648.64"/>
+<use href="#d-t" x="1499.98" y="648.64"/>
+<use href="#d-b" x="1662.14" y="648.64"/>
+<use href="#d-t" x="1682.41" y="648.64"/>
+<use href="#d-r" x="486.48" y="668.91"/>
+<use href="#d-b" x="506.75" y="668.91"/>
+<use href="#d-t" x="527.02" y="668.91"/>
+<use href="#d-r" x="547.29" y="668.91"/>
+<use href="#d-b" x="567.56" y="668.91"/>
+<use href="#d-t" x="587.83" y="668.91"/>
+<use href="#d-r" x="608.1" y="668.91"/>
+<use href="#d-b" x="628.37" y="668.91"/>
+<use href="#d-t" x="648.64" y="668.91"/>
+<use href="#d-r" x="668.91" y="668.91"/>
+<use href="#d-b" x="993.23" y="668.91"/>
+<use href="#d-t" x="1013.5" y="668.91"/>
+<use href="#d-r" x="1033.77" y="668.91"/>
+<use href="#d-b" x="1054.04" y="668.91"/>
+<use href="#d-t" x="1074.31" y="668.91"/>
+<use href="#d-r" x="1094.58" y="668.91"/>
+<use href="#d-b" x="506.75" y="689.18"/>
+<use href="#d-t" x="527.02" y="689.18"/>
+<use href="#d-r" x="547.29" y="689.18"/>
+<use href="#d-b" x="567.56" y="689.18"/>
+<use href="#d-t" x="587.83" y="689.18"/>
+<use href="#d-r" x="608.1" y="689.18"/>
+<use href="#d-b" x="628.37" y="689.18"/>
+<use href="#d-t" x="648.64" y="689.18"/>
+<use href="#d-r" x="668.91" y="689.18"/>
+<use href="#d-r" x="972.96" y="689.18"/>
+<use href="#d-b" x="993.23" y="689.18"/>
+<use href="#d-t" x="1013.5" y="689.18"/>
+<use href="#d-r" x="1033.77" y="689.18"/>
+<use href="#d-b" x="1054.04" y="689.18"/>
+<use href="#d-t" x="1074.31" y="689.18"/>
+<use href="#d-r" x="1094.58" y="689.18"/>
+<use href="#d-t" x="1621.6" y="689.18"/>
+<use href="#d-t" x="527.02" y="709.45"/>
+<use href="#d-r" x="547.29" y="709.45"/>
+<use href="#d-b" x="567.56" y="709.45"/>
+<use href="#d-t" x="587.83" y="709.45"/>
+<use href="#d-r" x="608.1" y="709.45"/>
+<use href="#d-b" x="628.37" y="709.45"/>
+<use href="#d-t" x="648.64" y="709.45"/>
+<use href="#d-r" x="668.91" y="709.45"/>
+<use href="#d-r" x="972.96" y="709.45"/>
+<use href="#d-b" x="993.23" y="709.45"/>
+<use href="#d-t" x="1013.5" y="709.45"/>
+<use href="#d-r" x="1033.77" y="709.45"/>
+<use href="#d-b" x="1054.04" y="709.45"/>
+<use href="#d-t" x="1074.31" y="709.45"/>
+<use href="#d-r" x="1155.39" y="709.45"/>
+<use href="#d-r" x="1581.06" y="709.45"/>
+<use href="#d-b" x="1601.33" y="709.45"/>
+<use href="#d-t" x="1621.6" y="709.45"/>
+<use href="#d-r" x="1641.87" y="709.45"/>
+<use href="#d-t" x="527.02" y="729.72"/>
+<use href="#d-r" x="547.29" y="729.72"/>
+<use href="#d-b" x="567.56" y="729.72"/>
+<use href="#d-t" x="587.83" y="729.72"/>
+<use href="#d-r" x="608.1" y="729.72"/>
+<use href="#d-b" x="628.37" y="729.72"/>
+<use href="#d-t" x="648.64" y="729.72"/>
+<use href="#d-b" x="993.23" y="729.72"/>
+<use href="#d-t" x="1013.5" y="729.72"/>
+<use href="#d-r" x="1033.77" y="729.72"/>
+<use href="#d-b" x="1054.04" y="729.72"/>
+<use href="#d-t" x="1074.31" y="729.72"/>
+<use href="#d-r" x="1155.39" y="729.72"/>
+<use href="#d-b" x="1540.52" y="729.72"/>
+<use href="#d-t" x="1560.79" y="729.72"/>
+<use href="#d-r" x="1581.06" y="729.72"/>
+<use href="#d-b" x="1601.33" y="729.72"/>
+<use href="#d-t" x="1621.6" y="729.72"/>
+<use href="#d-r" x="1641.87" y="729.72"/>
+<use href="#d-b" x="1662.14" y="729.72"/>
+<use href="#d-t" x="1682.41" y="729.72"/>
+<use href="#d-t" x="527.02" y="749.99"/>
+<use href="#d-r" x="547.29" y="749.99"/>
+<use href="#d-b" x="567.56" y="749.99"/>
+<use href="#d-t" x="587.83" y="749.99"/>
+<use href="#d-r" x="608.1" y="749.99"/>
+<use href="#d-b" x="993.23" y="749.99"/>
+<use href="#d-t" x="1013.5" y="749.99"/>
+<use href="#d-r" x="1033.77" y="749.99"/>
+<use href="#d-b" x="1054.04" y="749.99"/>
+<use href="#d-r" x="1520.25" y="749.99"/>
+<use href="#d-b" x="1540.52" y="749.99"/>
+<use href="#d-t" x="1560.79" y="749.99"/>
+<use href="#d-r" x="1581.06" y="749.99"/>
+<use href="#d-b" x="1601.33" y="749.99"/>
+<use href="#d-t" x="1621.6" y="749.99"/>
+<use href="#d-r" x="1641.87" y="749.99"/>
+<use href="#d-b" x="1662.14" y="749.99"/>
+<use href="#d-t" x="1682.41" y="749.99"/>
+<use href="#d-r" x="1702.68" y="749.99"/>
+<use href="#d-t" x="527.02" y="770.26"/>
+<use href="#d-r" x="547.29" y="770.26"/>
+<use href="#d-b" x="567.56" y="770.26"/>
+<use href="#d-t" x="587.83" y="770.26"/>
+<use href="#d-r" x="608.1" y="770.26"/>
+<use href="#d-b" x="993.23" y="770.26"/>
+<use href="#d-t" x="1013.5" y="770.26"/>
+<use href="#d-r" x="1033.77" y="770.26"/>
+<use href="#d-b" x="1054.04" y="770.26"/>
+<use href="#d-b" x="1540.52" y="770.26"/>
+<use href="#d-t" x="1560.79" y="770.26"/>
+<use href="#d-r" x="1581.06" y="770.26"/>
+<use href="#d-b" x="1601.33" y="770.26"/>
+<use href="#d-t" x="1621.6" y="770.26"/>
+<use href="#d-r" x="1641.87" y="770.26"/>
+<use href="#d-b" x="1662.14" y="770.26"/>
+<use href="#d-t" x="1682.41" y="770.26"/>
+<use href="#d-r" x="1702.68" y="770.26"/>
+<use href="#d-t" x="527.02" y="790.53"/>
+<use href="#d-r" x="547.29" y="790.53"/>
+<use href="#d-b" x="567.56" y="790.53"/>
+<use href="#d-t" x="587.83" y="790.53"/>
+<use href="#d-t" x="1013.5" y="790.53"/>
+<use href="#d-r" x="1033.77" y="790.53"/>
+<use href="#d-b" x="1540.52" y="790.53"/>
+<use href="#d-t" x="1560.79" y="790.53"/>
+<use href="#d-r" x="1641.87" y="790.53"/>
+<use href="#d-b" x="1662.14" y="790.53"/>
+<use href="#d-t" x="1682.41" y="790.53"/>
+<use href="#d-r" x="1702.68" y="790.53"/>
+<use href="#d-b" x="506.75" y="810.8"/>
+<use href="#d-t" x="527.02" y="810.8"/>
+<use href="#d-r" x="547.29" y="810.8"/>
+<use href="#d-b" x="567.56" y="810.8"/>
+<use href="#d-b" x="1662.14" y="810.8"/>
+<use href="#d-t" x="1682.41" y="810.8"/>
+<use href="#d-r" x="1702.68" y="810.8"/>
+<use href="#d-b" x="506.75" y="831.07"/>
+<use href="#d-t" x="527.02" y="831.07"/>
+<use href="#d-r" x="547.29" y="831.07"/>
+<use href="#d-b" x="1844.57" y="831.07"/>
+<use href="#d-b" x="506.75" y="851.34"/>
+<use href="#d-t" x="527.02" y="851.34"/>
+<use href="#d-t" x="1682.41" y="851.34"/>
+<use href="#d-r" x="1824.3" y="851.34"/>
+<use href="#d-b" x="506.75" y="871.61"/>
+<use href="#d-t" x="1804.03" y="871.61"/>
+<use href="#d-b" x="506.75" y="891.88"/>
+<use href="#d-t" x="527.02" y="891.88"/>
+<use href="#d-b" x="506.75" y="912.15"/>
+<use href="#d-b" x="506.75" y="932.42"/>
+<use href="#d-t" x="527.02" y="932.42"/>
+</svg>
+</section>
+
+<!-- 7. IMPACT -->
+<section class="impact" id="impact">
+  <img class="impact__bg" src="assets/images/arch-factory-beam.jpg" alt="" loading="lazy">
+  <div class="impact__veil"></div>
+  <div class="impact__inner">
+    <ul class="impact__list">
+      <li><a href="#impact">협력사 상생</a></li>
+      <li><a href="#impact">지역사회</a></li>
+      <li><a href="#impact">지속가능성</a></li>
+    </ul>
+    <div class="impact__foot">
+      <p class="impact__title">협력사와 함께 성장하며<br>지속가능한 제조 생태계를 만듭니다.</p>
+      <a class="btn btn--solid-light" href="#newsroom">
+        <span>Impact</span>
+        <img src="assets/images/fc8e4.svg" alt="" width="20" height="20">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 8. NEWSROOM -->
+<section class="news" id="newsroom">
+  <div class="container container--wide">
+    <h2 class="news__title" data-reveal>프레스트라의<br>새로운 소식을 만나보세요.</h2>
+    <div class="grid news__grid">
+      <a class="news__main" style="grid-column:1/9" href="#newsroom" data-reveal>
+        <div class="news__thumb news__thumb--main"><img src="assets/images/news-blade.jpg" alt="터빈 블레이드 정밀 가공품" loading="lazy"></div>
+        <p class="news__cap">프레스트라, 차세대 터빈 임펠러 정밀가공 라인 본격 가동</p>
+      </a>
+      <div class="news__side" style="grid-column:9/13">
+        <a class="news__item" href="#newsroom" data-reveal>
+          <div class="news__thumb"><img src="assets/images/news-roll.jpg" alt="냉간단조 프레스 롤러 설비" loading="lazy"></div>
+          <p class="news__cap">냉간단조 신규 프레스 설비 도입 비하인드</p>
+        </a>
+        <a class="news__item" href="#newsroom" data-reveal>
+          <div class="news__thumb"><img src="assets/images/arch-machine.jpg" alt="가공 완료된 금속 주조 부품" loading="lazy"></div>
+          <p class="news__cap">스마트팩토리 2단계 구축 현장 스토리</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 9. FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__logo">PRESTRA</p>
+      <div class="footer__cols">
+        <ul>
+          <li class="footer__label">운영시간</li>
+          <li>평일 09:00 - 18:00 (점심시간 12:00 - 13:00)</li>
+        </ul>
+        <ul>
+          <li class="footer__label">고객센터</li>
+          <li>031-000-0000</li>
+          <li>sales@prestra.example</li>
+        </ul>
+        <ul>
+          <li>© 2026 PRESTRA Inc.</li>
+          <li>All rights reserved.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
