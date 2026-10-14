@@ -157,13 +157,23 @@
       ctx.clearRect(0, 0, cv.width, cv.height);
       pts = pts.filter((p) => now - p.t < LIFE);
       if (pts.length > 1) {
-        // one continuous opaque path (no per-segment overlap → no dots); the tail simply retracts
-        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-        ctx.strokeStyle = COLOR; ctx.lineWidth = 3; ctx.globalAlpha = 1;
+        // single opaque filled ribbon: full width at the cursor, tapering to a sharp point at the tail
+        const n = pts.length, L = [], R = [];
+        for (let i = 0; i < n; i++) {
+          const p0 = pts[Math.max(0, i - 1)], p1 = pts[Math.min(n - 1, i + 1)];
+          let dx = p1.x - p0.x, dy = p1.y - p0.y;
+          const len = Math.hypot(dx, dy) || 1; dx /= len; dy /= len;
+          const half = 1.5 * Math.max(0, 1 - (now - pts[i].t) / LIFE); // 3px max width
+          L.push([pts[i].x - dy * half, pts[i].y + dx * half]);
+          R.push([pts[i].x + dy * half, pts[i].y - dx * half]);
+        }
+        ctx.fillStyle = COLOR; ctx.globalAlpha = 1;
         ctx.beginPath();
-        ctx.moveTo(pts[0].x, pts[0].y);
-        for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
-        ctx.stroke();
+        ctx.moveTo(L[0][0], L[0][1]);
+        for (let i = 1; i < n; i++) ctx.lineTo(L[i][0], L[i][1]);
+        for (let i = n - 1; i >= 0; i--) ctx.lineTo(R[i][0], R[i][1]);
+        ctx.closePath();
+        ctx.fill();
       }
       if (pts.length > 1) trailRaf = requestAnimationFrame(draw);
     };
