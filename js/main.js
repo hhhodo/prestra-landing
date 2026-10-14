@@ -130,6 +130,26 @@
     document.addEventListener('pointerleave', () => { pointer = null; schedule(); });
   }
 
+  // ---------- nav anchors: Direct/Custom live inside the pinned horizontal track, so jump to their hold positions ----------
+  const HOLD = { '#direct': 0.48, '#custom': 0.88 };   // scroll progress (0..1) of the hscroll stage where each screen rests
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      const hash = a.getAttribute('href');
+      if (hash.length < 2 || !hscroll) return;
+      if (pinMq.matches && HOLD[hash] !== undefined) {
+        e.preventDefault();
+        const top = hscroll.getBoundingClientRect().top + window.scrollY;
+        const range = hscroll.offsetHeight - window.innerHeight;
+        window.scrollTo({ top: top + range * HOLD[hash], behavior: reduced ? 'auto' : 'smooth' });
+      } else {
+        const t = document.querySelector(hash);
+        if (!t) return;
+        e.preventDefault();
+        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY, behavior: reduced ? 'auto' : 'smooth' });
+      }
+    });
+  });
+
   // ---------- statement: scroll-driven text swap + images shooting up one by one ----------
   const stage = document.getElementById('statement');
   if (stage) {
