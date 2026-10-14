@@ -148,11 +148,11 @@
         el.classList.toggle('is-past', i < step);
       });
       imgs.forEach((el, i) => {
-        // image i launches at i/N of the scroll and rises fast (ease-out), then drifts up slowly
-        const start = i / (N + 0.5), len = 0.5 / (N + 0.5) + 0.04;
-        const rise = easeOut(clamp((p - start) / len));
-        const drift = clamp(p - start - len, 0, 1) * vh * 0.18;
-        el.style.transform = `translate3d(0,${(1 - rise) * vh * 1.2 - drift}px,0)`;
+        // each image shoots from below the screen to above it, staggered along the scroll
+        const start = i * 0.18, len = 0.45;
+        const k = clamp((p - start) / len);
+        const y = lerp(vh * 1.1, -vh * 1.1, k);
+        el.style.transform = `translate3d(0,${y}px,0)`;
       });
     };
     const scheduleStage = () => { if (!sraf) sraf = requestAnimationFrame(renderStage); };
