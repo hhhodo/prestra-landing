@@ -161,6 +161,9 @@
     window.addEventListener('resize', scheduleStage);
   }
 
+  // map arrows are SMIL: pause them for reduced-motion
+  if (reduced) document.querySelectorAll('.map__links').forEach((svg) => svg.pauseAnimations && svg.pauseAnimations());
+
   // ---------- custom cursor: blue dot + fading blue trail ----------
   if (canHover) {
     document.documentElement.classList.add('has-cursor');
