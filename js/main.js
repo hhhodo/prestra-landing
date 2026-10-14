@@ -161,37 +161,61 @@
     window.addEventListener('resize', scheduleStage);
   }
 
-  // ---------- impact: sticky, 3 screens — each list line fills, then the screen changes ----------
+  // ---------- impact: sticky, 3 screens — lines fill automatically and advance on their own; scrolling also advances ----------
   const impact = document.getElementById('impact');
   if (impact) {
     const slides = [...impact.querySelectorAll('.impact__slide')];
+    const imgsEl = slides.map((sl) => sl.querySelector('.impact__bg'));
     const items = [...impact.querySelectorAll('.impact__list li')];
     const N = slides.length;
-    let iraf = null;
-    const renderImpact = () => {
-      iraf = null;
-      const range = impact.offsetHeight - window.innerHeight;
-      const p = reduced ? 1 : clamp(-impact.getBoundingClientRect().top / range);
-      const pos = Math.min(N - 1e-6, p * N);          // 0..N
-      const idx = Math.floor(pos), s = pos - idx;       // screen index, progress inside the screen
+    const DUR = 4200;                 // ms per screen (blur clears, line fills)
+    let idx = 0, elapsed = 0, lastScrollIdx = 0, lastT = performance.now();
+
+    const show = () => {
       slides.forEach((sl, i) => {
-        // active screen fades in over the first 12% of its segment (while blurred), previous one fades out
-        const o = i === idx ? clamp(idx === 0 ? 1 : s / 0.12) : (i === idx - 1 ? 1 - clamp(s / 0.12) : 0);
-        sl.style.opacity = o;
+        sl.classList.toggle('is-active', i === idx);
         sl.style.zIndex = i === idx ? 2 : 1;
-        const img = sl.querySelector('.impact__bg');
-        const blur = i === idx ? 50 * (1 - easeInOut(clamp(s / 0.5))) : 0;
-        if (i === idx || i === idx - 1) img.style.filter = `blur(${blur}px)`;
       });
+    };
+    const paint = () => {
+      const s = clamp(elapsed / DUR);
+      imgsEl[idx].style.filter = `blur(${50 * (1 - easeInOut(clamp(s / 0.5)))}px)`;
       items.forEach((li, i) => {
-        const f = i < idx ? 1 : i === idx ? clamp((s - 0.15) / 0.55) : 0;   // fills, then waits for the screen to change
+        const f = i < idx ? 1 : i === idx ? clamp((s - 0.15) / 0.6) : 0;
         li.style.setProperty('--f', f.toFixed(3));
       });
     };
-    const scheduleImpact = () => { if (!iraf) iraf = requestAnimationFrame(renderImpact); };
-    renderImpact();
-    window.addEventListener('scroll', scheduleImpact, { passive: true });
-    window.addEventListener('resize', scheduleImpact);
+    const goTo = (i) => { idx = i; elapsed = 0; show(); };
+
+    const scrollIdx = () => {
+      const range = impact.offsetHeight - window.innerHeight;
+      const p = clamp(-impact.getBoundingClientRect().top / range);
+      return Math.min(N - 1, Math.floor(p * N));
+    };
+    const onScrollImpact = () => {
+      const si = scrollIdx();
+      if (si !== lastScrollIdx) { lastScrollIdx = si; if (si !== idx) goTo(si); }
+    };
+
+    const tick = (now) => {
+      const dt = Math.min(100, now - lastT); lastT = now;
+      const r = impact.getBoundingClientRect(), vh = window.innerHeight;
+      const pinned = r.top <= vh * 0.2 && r.bottom >= vh * 0.8;
+      if (pinned) {
+        elapsed += dt;
+        if (elapsed >= DUR && idx < N - 1) goTo(idx + 1);
+      }
+      paint();
+      requestAnimationFrame(tick);
+    };
+
+    show();
+    if (reduced) {
+      idx = N - 1; elapsed = DUR; show(); paint();
+    } else {
+      window.addEventListener('scroll', onScrollImpact, { passive: true });
+      requestAnimationFrame(tick);
+    }
   }
 
   // map arrows are SMIL: pause them for reduced-motion
