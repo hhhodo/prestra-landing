@@ -62,8 +62,7 @@
   const render = (now) => {
     raf = null;
     const dt = Math.min(100, Math.max(0, now - last)); last = now;
-    const easeIn = 1 - Math.exp(-dt / 28);   // snap into a circle
-    const easeOutHv = 1 - Math.exp(-dt / 80); // relax back to semicircle
+    const ease = 1 - Math.exp(-dt / 90);
     const s = scrollProgress();
     const phaseA = 1 / 3;
     const a = clamp(s / phaseA);                       // dot phase progress
@@ -86,11 +85,11 @@
         const x = pointer.x - box.left, y = pointer.y - box.top;
         if (x >= cell.c * cw && x < (cell.c + 1) * cw && y >= cell.r * ch && y < (cell.r + 1) * ch) target = gate;
       }
-      cell.h += (target - cell.h) * (target > cell.h ? easeIn : easeOutHv);
+      cell.h += (target - cell.h) * ease;
       if (Math.abs(target - cell.h) > 0.002) busy = true; else cell.h = target;
       const hv = cell.h * t;                                      // only when fully grown
 
-      const circle = Math.min(cw, ch);
+      const circle = Math.min(cw, ch) * 0.9;  // hovered circle sits slightly inside the cell
       const R = cell.type === 0 ? ch / 2 : cw / 2;
       const rad = [0, 0, 0, 0]; // tl tr br bl
       if (cell.type === 0) { rad[1] = R; rad[2] = R; }
@@ -101,7 +100,7 @@
       const st = cell.sp.style;
       st.width = wPx + 'px';
       st.height = hPx + 'px';
-      st.borderRadius = rad.map((v) => lerp(lerp(DOT / 2, v, t), circle / 2, Math.min(1, hv * 2)) + 'px').join(' ');
+      st.borderRadius = rad.map((v) => lerp(lerp(DOT / 2, v, t), circle / 2, hv) + 'px').join(' ');
       st.opacity = String(clamp(easeOut(lt) * 4) * vanish);
       st.transform = `translate(-50%,-50%)`;
     }
