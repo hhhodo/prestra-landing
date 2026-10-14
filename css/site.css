@@ -117,7 +117,6 @@ body{background:var(--bg-dark);color:var(--on-dark);}
 .impact__slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;}
 .impact__slide.is-active{opacity:1;}
 .impact__bg{position:absolute;inset:-6%;width:112%;height:112%;max-width:none;object-fit:cover;opacity:.5;filter:blur(50px);will-change:filter;}
-.impact__bg--crop{object-position:88% 22%;transform:scale(1.5);transform-origin:88% 22%;}
 .impact__veil{position:absolute;inset:0;background:rgba(0,0,0,.15);pointer-events:none;}
 .impact__title{z-index:3;position:absolute;left:var(--space-8);bottom:var(--space-8);font-size:var(--fs-h1);font-weight:var(--fw-strong);line-height:var(--lh-h1);}
 .impact__list{z-index:5;position:absolute;left:var(--space-8);top:var(--space-11);width:348px;max-width:calc(100% - var(--space-8) * 2);}
