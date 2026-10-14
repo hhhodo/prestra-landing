@@ -3,7 +3,7 @@
 Figma(ABBG_AI-BM, node 1286:2)를 제조업 콘텐츠로 재구성한 원페이지 랜딩.
 
 ## Variant memo
-typo=loud / image=high / color=dominant / image-radius=soft / card-radius=soft / button-radius=round / border=hairline / button-style=solid+outline / fw=600/400 / spacing=space-11
+typo=loud / image=high / color=dominant / image-radius=soft / card-radius=soft / button-radius=round / border=hairline / button-style=solid+outline / fw=500/400 / spacing=space-11
 
 ## Layout
 | Section | Container | Split |
@@ -24,4 +24,4 @@ typo=loud / image=high / color=dominant / image-radius=soft / card-radius=soft /
 - 그 외 상세 애니메이션(텍스트 분해 등)은 후속 작업.
 - 뉴스룸 슬라이드 도트는 치트시트 금지 규칙(pagination)에 따라 제외.
 - 이미지: `assets/images/` (Figma에서 추출, jpg 변환).
-- 히어로 마우스 오버: 커서 주변 반원이 거리에 비례해 원으로 변하며 파란색으로 물드는 파동 효과 (hover 지원 기기만).
+- 히어로 마우스 오버: 커서가 올라간 칸의 반원만 원으로 변함 (색 변화 없음, hover 지원 기기만).

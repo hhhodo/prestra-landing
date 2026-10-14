@@ -5,7 +5,7 @@
   --ink:#111; --ink-subtle:#888;
   --on-dark:#e8e9ec; --on-dark-subtle:#8a9099; --on-dark-muted:#a8b0bc; --on-dark-line:#1e2126;
   --nav-bg:rgba(13,14,16,.6);
-  --fw-strong:600;
+  --fw-strong:500;
   --fs-marquee:calc(var(--fs-display-lg) * 2.5);
 }
 body{background:var(--bg-dark);color:var(--on-dark);}

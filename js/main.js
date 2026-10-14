@@ -15,9 +15,6 @@
   const ROWS = 3;
   const CELL_RATIO = 318.5 / 301.25; // Figma cell w/h
   const LOAD_MS = 900;
-  const HOVER_R = 1.6;            // hover influence radius (in cell heights)
-  const BASE = [61, 63, 68];      // --shape
-  const HOT = [84, 179, 255];     // --accent
   const lerp = (a, b, t) => a + (b - a) * t;
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const easeOut = (t) => 1 - Math.pow(1 - t, 3);
@@ -82,12 +79,11 @@
       const t = Math.min(easeOut(lt), 1 - easeInOut(q));
       const vanish = 1 - easeInOut(w);
 
-      // hover: proximity to pointer, eased per cell
+      // hover: only the cell under the pointer becomes a circle
       let target = 0;
       if (gate) {
-        const cx = box.left + (cell.c + .5) * cw, cy = box.top + (cell.r + .5) * ch;
-        const d = Math.hypot(pointer.x - cx, pointer.y - cy) / ch;
-        target = easeOut(clamp((1 - d / HOVER_R) * 1.6)) * gate;
+        const x = pointer.x - box.left, y = pointer.y - box.top;
+        if (x >= cell.c * cw && x < (cell.c + 1) * cw && y >= cell.r * ch && y < (cell.r + 1) * ch) target = gate;
       }
       cell.h += (target - cell.h) * ease;
       if (Math.abs(target - cell.h) > 0.002) busy = true; else cell.h = target;
@@ -106,14 +102,6 @@
       st.height = hPx + 'px';
       st.borderRadius = rad.map((v) => lerp(lerp(DOT / 2, v, t), circle / 2, hv) + 'px').join(' ');
       st.opacity = String(clamp(easeOut(lt) * 4) * vanish);
-      if (cell.accent) {
-        st.background = '';
-      } else {
-        const m = clamp(hv * 1.1);
-        st.background = m > 0.01
-          ? `rgb(${BASE.map((v, i) => Math.round(lerp(v, HOT[i], m))).join(',')})`
-          : '';
-      }
       st.transform = `translate(-50%,-50%)`;
     }
     // horizontal travel after the dot phase
