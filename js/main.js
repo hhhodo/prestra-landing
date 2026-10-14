@@ -161,20 +161,31 @@
     window.addEventListener('resize', scheduleStage);
   }
 
-  // ---------- impact: sticky, blur clears and list lines fill one by one while scrolling ----------
+  // ---------- impact: sticky, 3 screens — each list line fills, then the screen changes ----------
   const impact = document.getElementById('impact');
   if (impact) {
-    const bg = document.getElementById('impactBg');
+    const slides = [...impact.querySelectorAll('.impact__slide')];
     const items = [...impact.querySelectorAll('.impact__list li')];
+    const N = slides.length;
     let iraf = null;
     const renderImpact = () => {
       iraf = null;
       const range = impact.offsetHeight - window.innerHeight;
       const p = reduced ? 1 : clamp(-impact.getBoundingClientRect().top / range);
-      bg.style.filter = `blur(${50 * (1 - easeInOut(clamp(p / 0.45)))}px)`;
+      const pos = Math.min(N - 1e-6, p * N);          // 0..N
+      const idx = Math.floor(pos), s = pos - idx;       // screen index, progress inside the screen
+      slides.forEach((sl, i) => {
+        // active screen fades in over the first 12% of its segment (while blurred), previous one fades out
+        const o = i === idx ? clamp(idx === 0 ? 1 : s / 0.12) : (i === idx - 1 ? 1 - clamp(s / 0.12) : 0);
+        sl.style.opacity = o;
+        sl.style.zIndex = i === idx ? 2 : 1;
+        const img = sl.querySelector('.impact__bg');
+        const blur = i === idx ? 50 * (1 - easeInOut(clamp(s / 0.5))) : 0;
+        if (i === idx || i === idx - 1) img.style.filter = `blur(${blur}px)`;
+      });
       items.forEach((li, i) => {
-        const a0 = 0.2 + i * 0.2;
-        li.style.setProperty('--f', clamp((p - a0) / 0.2).toFixed(3));
+        const f = i < idx ? 1 : i === idx ? clamp((s - 0.15) / 0.55) : 0;   // fills, then waits for the screen to change
+        li.style.setProperty('--f', f.toFixed(3));
       });
     };
     const scheduleImpact = () => { if (!iraf) iraf = requestAnimationFrame(renderImpact); };

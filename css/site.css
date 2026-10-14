@@ -113,15 +113,17 @@ body{background:var(--bg-dark);color:var(--on-dark);}
 
 /* ---------- impact ---------- */
 .impact{position:relative;height:400vh;background:#000;color:var(--color-canvas);}
-.impact__sticky{position:sticky;top:0;height:100vh;min-height:560px;overflow:hidden;display:flex;}
+.impact__sticky{position:sticky;top:0;height:100vh;min-height:560px;overflow:hidden;}
+.impact__slide{position:absolute;inset:0;opacity:0;}
+.impact__slide.is-active{opacity:1;}
 .impact__bg{position:absolute;inset:-6%;width:112%;height:112%;max-width:none;object-fit:cover;opacity:.5;filter:blur(50px);will-change:filter;}
-.impact__veil{position:absolute;inset:0;background:rgba(0,0,0,.15);}
-.impact__inner{position:relative;width:100%;display:flex;flex-direction:column;justify-content:space-between;padding:var(--space-11) var(--space-8) var(--space-8);}
-.impact__list{width:348px;max-width:100%;}
+.impact__bg--crop{object-position:88% 22%;transform:scale(1.5);transform-origin:88% 22%;}
+.impact__veil{position:absolute;inset:0;background:rgba(0,0,0,.15);pointer-events:none;}
+.impact__title{z-index:3;position:absolute;left:var(--space-8);bottom:var(--space-8);font-size:var(--fs-h1);font-weight:var(--fw-strong);line-height:var(--lh-h1);}
+.impact__list{z-index:5;position:absolute;left:var(--space-8);top:var(--space-11);width:348px;max-width:calc(100% - var(--space-8) * 2);}
 .impact__list li{position:relative;border-top:1px solid rgba(255,255,255,.2);--f:0;}
 .impact__list li::before{content:"";position:absolute;left:0;top:-1px;width:100%;height:1px;background:var(--color-canvas);transform:scaleX(var(--f));transform-origin:left;}
 .impact__list a{display:block;padding-block:var(--space-3);font-size:var(--fs-body-1);font-weight:var(--fw-strong);color:rgb(255 255 255 / calc(.4 + .6 * var(--f)));}
-.impact__title{font-size:var(--fs-h1);font-weight:var(--fw-strong);line-height:var(--lh-h1);}
 
 /* ---------- newsroom ---------- */
 .news{position:relative;z-index:1;background:var(--bg-dark);padding-block:var(--space-11) var(--space-13);}
@@ -178,7 +180,8 @@ body{background:var(--bg-dark);color:var(--on-dark);}
   .statement__img--2{left:62%;top:14%;}
   .statement__img--3{left:8%;top:12%;}
   .statement__img--4{left:64%;top:66%;}
-  .impact__inner{padding-inline:var(--gutter);}
+  .impact__title{left:var(--gutter);}
+  .impact__list{left:var(--gutter);}
   .map{width:200%;margin-left:-50%;}
 }
 @media (prefers-reduced-motion:reduce){
