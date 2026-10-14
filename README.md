@@ -25,3 +25,5 @@ typo=loud / image=high / color=dominant / image-radius=soft / card-radius=soft /
 - 뉴스룸 슬라이드 도트는 치트시트 금지 규칙(pagination)에 따라 제외.
 - 이미지: `assets/images/` (Figma에서 추출, jpg 변환).
 - 히어로 마우스 오버: 커서가 올라간 칸의 반원만 원으로 변함 (색 변화 없음, hover 지원 기기만).
+- 스티키: 가로 핀 구간은 화면마다 멈춤 구간을 두고(히어로 → 홀드 → Direct 홀드 → Custom 홀드), Statement·Impact는 100vh 스티키로 고정되어 다음 섹션이 위로 덮으며 올라옴(≥1025px).
+- Custom 아치 호버: 반원 → 원으로 변하면서 이미지 확대.

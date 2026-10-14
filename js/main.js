@@ -64,7 +64,7 @@
     const dt = Math.min(100, Math.max(0, now - last)); last = now;
     const ease = 1 - Math.exp(-dt / 90);
     const s = scrollProgress();
-    const phaseA = 1 / 3;
+    const phaseA = 0.22;
     const a = clamp(s / phaseA);                       // dot phase progress
     const elapsed = now - t0;
     const gate = canHover && pointer ? 1 - clamp(a * 8) : 0;
@@ -104,10 +104,11 @@
       st.opacity = String(clamp(easeOut(lt) * 4) * vanish);
       st.transform = `translate(-50%,-50%)`;
     }
-    // horizontal travel after the dot phase
+    // horizontal travel with a hold on every screen: hero → [hold] → Direct → [hold] → Custom
     if (pinMq.matches) {
-      const b = clamp((s - phaseA) / (1 - phaseA));
-      track.style.transform = `translate3d(${-b * (track.scrollWidth - window.innerWidth)}px,0,0)`;
+      const p1 = easeInOut(clamp((s - 0.22) / 0.16));
+      const p2 = easeInOut(clamp((s - 0.58) / 0.16));
+      track.style.transform = `translate3d(${-(p1 + p2) * window.innerWidth}px,0,0)`;
     } else {
       track.style.transform = '';
     }
