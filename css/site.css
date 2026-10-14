@@ -127,13 +127,15 @@ body{background:var(--bg-dark);color:var(--on-dark);}
 /* ---------- newsroom ---------- */
 .news{position:relative;z-index:1;background:var(--bg-dark);padding-block:var(--space-11) var(--space-13);}
 .news__title{font-size:var(--fs-h1);font-weight:var(--fw-strong);line-height:var(--lh-h1);color:var(--on-dark);margin-bottom:var(--space-9);}
-.news__thumb{background:#16181c;border-radius:var(--radius-sm);overflow:hidden;}
-.news__thumb img{width:100%;height:100%;object-fit:cover;}
-.news__thumb--main{aspect-ratio:968/664;}
-.news__item .news__thumb{aspect-ratio:472/290;}
-.news__cap{padding-block:var(--space-4) var(--space-5);font-size:var(--fs-body-1);font-weight:var(--fw-strong);color:var(--on-dark);}
-.news__side{display:flex;flex-direction:column;gap:var(--space-5);}
-.news__main,.news__item{display:block;}
+.news__grid{align-items:stretch;}
+.news__main,.news__item{display:flex;flex-direction:column;}
+.news__thumb{position:relative;background:#16181c;border-radius:var(--radius-sm);overflow:hidden;}
+.news__thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.news__thumb--main{flex:none;aspect-ratio:968/664;}
+.news__item{flex:1;min-height:0;}
+.news__item .news__thumb{flex:1;min-height:0;}
+.news__cap{flex:none;height:calc(var(--fs-body-1) * var(--lh-body) + var(--space-4) + var(--space-5));padding-block:var(--space-4) var(--space-5);font-size:var(--fs-body-1);font-weight:var(--fw-strong);color:var(--on-dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.news__side{display:flex;flex-direction:column;gap:0;}
 
 /* ---------- footer ---------- */
 .footer{background:var(--bg-dark);color:var(--on-dark);}
@@ -166,6 +168,7 @@ body{background:var(--bg-dark);color:var(--on-dark);}
   .footer__grid > *{grid-column:1/-1 !important;text-align:left;}
   .footer__grid{row-gap:var(--space-6);}
   .news__grid > *{grid-column:1/-1 !important;}
+  .news__item .news__thumb{flex:none;aspect-ratio:472/290;}
 }
 @media (max-width:768px){
   .hero__labels{left:0;top:30%;width:100%;height:auto;grid-template-columns:1fr;}
